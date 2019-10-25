@@ -1,0 +1,38 @@
+@import "./../../components/common/wepy-pop-delete.wxss";
+@import "./../../components/common/popup.wxss";
+@import "./../../components/common/bottomLoadMore.wxss";
+@import "./../../components/friends-item.wxss";
+/** less **/
+.con .top {
+  position: relative;
+}
+.con .top .top-bg-img {
+  width: 750rpx;
+  height: 426rpx;
+}
+.con .top .top-head-img {
+  width: 128rpx;
+  height: 128rpx;
+  position: absolute;
+  right: 48rpx;
+  top: 334rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.con .top .top-name {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #fff;
+  height: 40rpx;
+  text-align: right;
+  position: absolute;
+  right: 196rpx;
+  top: 374rpx;
+}
+.con .fabu-btn {
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  right: 50rpx;
+  bottom: 80rpx;
+}

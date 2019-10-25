@@ -1,0 +1,46 @@
+
+    <view class="con">
+        <image src="{{datas.thumb.url}}" class="course-img"/>
+        <view class="course-num">
+            {{datas.course_num}}课时
+        </view>
+        <image src="/images/edit.png" class="course-edit"  wx:if="{{level>=3}}" bindtap="editTap"/>
+        <view class="course-content">
+            <view class="li">
+                <image src="/images/c2.png"/>
+                <text class="tl2">{{datas.course_name}}</text>
+            </view>
+            <view class="li">
+                <image src="/images/c1.png"/>
+                <text class="tl">时间：{{datas.start_time}}-{{datas.end_time}}</text>
+            </view>
+            <view class="li">
+                <image src="/images/c3.png"/>
+                <text class="tl">主讲老师：{{datas.lecturer.nickname}}</text>
+            </view>
+            <image src="{{datas.lecturer.photo}}" class="teacher-img"/>
+        </view>
+        <view class="sign">
+            <text class="sign-txt">签到表</text>
+            <scroll-view scroll-y>
+                <block  wx:for="{{datas.student_list}}" wx:key="index">
+                    <view class="item layout-row">
+                        <view class="item-left layout-row">
+                            <image src="{{item.student_photo}}"/>
+                            <text class="item-name">No.{{item.id}}-{{item.name}}</text>
+                        </view>
+                        <view class="item-right layout-row">
+                            <view class="item-num">剩余{{item.total_num-item.used_num}}课时</view>
+                            <block wx:if="{{level>=2}}">
+                                <view class="item-btn" data-sid="{{item.student_id}}" wx:if="{{item.is_signin==0}}" bindtap="signTap">签到</view>
+                                <view class="item-btn singin" wx:else>已签到</view>
+                            </block>
+                        </view>
+                    </view>
+                </block>
+            </scroll-view>
+        </view>
+    </view>
+
+    <view>
+    </view>

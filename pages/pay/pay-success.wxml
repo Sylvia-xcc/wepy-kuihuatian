@@ -1,0 +1,6 @@
+
+    <view class="con">
+        <image src="http://www.fengzhankeji.com/flower/images/pay-success.png"/>
+        <text class="pay-t1">恭喜您 本次支付成功！</text>
+        <view class="btn center" bindtap="goHome">继续逛逛</view>
+    </view>

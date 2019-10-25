@@ -1,0 +1,100 @@
+<wxs src="../../wxs/mywxs.wxs" module="m1"/>
+
+    <view class="page">
+        <view class="box-bg">
+            <text class="t1">今天</text>
+            <text class="t2">{{m1.filterDate(today)}}</text>
+        </view>
+        <view class="page2"/>
+    </view>
+    <view class="con">
+        <view class="title layout-row">
+            <view class="blue-l"/>
+            课程信息
+        </view>
+        <view class="cell layout-row">
+            <text class="tl">课程名称：</text>
+            <input placeholder="必填，请输入课程名称" value="{{courseName}}" bindinput="bindCourseNameInput"/>
+        </view>
+        <view class="cell layout-row">
+            <text class="tl">课程日期：</text>
+            <picker mode="date" class="layout-row" value="{{date}}" bindchange="bindDateChange">
+                <view>{{m1.filterDate(date)}}
+                    <image class="img-down" src="/images/down.png"/>
+                </view>
+            </picker>
+        </view>
+        <view class="cell layout-row">
+            <text class="tl">时间：</text>
+            <view class="layout-row">
+                <view class="layout-row" style="margin-right:40rpx;">
+                    <picker mode="time" value="{{startTime}}" bindchange="bindStartTimeChange">
+                        <view>{{startTime}}
+                            <image class="img-down" src="/images/down.png"/>
+                        </view>
+                    </picker>
+                </view>
+                —
+                <view class="layout-row" style="margin-left:40rpx;">
+                    <picker mode="time" value="{{endTime}}" bindchange="bindEndTimeChange">
+                        <view>{{endTime}}
+                            <image class="img-down" src="/images/down.png"/>
+                        </view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        <view class="cell layout-row">
+            <text class="tl">主讲老师：</text>
+            <picker mode="selector" value="{{teacherId}}" range="{{teachersName}}" bindchange="bindTeacherChange">
+                {{teacherId>=0? teachersName[teacherId]:'必填，请输入主讲老师姓名'}}
+                <image class="img-down" src="/images/down.png"/>
+            </picker>
+        </view>
+        <!-- <view class="cell layout-row {{showStudentList?'border-none':''}}">
+                                            <text class="tl">选择学生：</text>
+                                            <view bindtap="tabTap">
+                                                <block wx:if="{{chooseStudents.length>0}}">已勾选<label style="color:#00ff00;">{{chooseStudents.length}}</label>学生</block>
+                                                <block wx:else>必填，请勾选学生姓名</block>
+                                                <image class="img-down" src="/images/down.png" />
+                                            </view>
+                                        </view>
+                                        <scroll-view scroll-y="{{true}}" hidden="{{!showStudentList}}" class="layout-row student">
+                                            <checkbox-group bindchange="bindStudentChange">
+                                                <view class="checkbox layout-row" wx:for="{{students}}" wx:for-item="item" wx:key="{{item.student_id}}">
+                                                    <checkbox style="margin-right:24rpx;" value="{{item.student_id}}" />No:{{item.student_id}} {{item.name}}
+                                                </view>
+                                            </checkbox-group>
+                                        </scroll-view> -->
+        <view class="cell layout-row">
+            <text class="tl">课时总数：</text>
+            <input placeholder="必填，请输入课时总数" type="number" value="{{courseNum}}" bindinput="bindCourseNumInput"/>
+        </view>
+        <view class="cell layout-row">
+            <text class="tl">商品：</text>
+            <picker mode="selector" value="{{goodsId}}" range="{{goodsName}}" bindchange="bindGoodsChange">
+                {{goodsId>=0? goodsName[goodsId]:'必填，请选择对应的商品'}}
+                <image class="img-down" src="/images/down.png"/>
+            </picker>
+        </view>
+        <view class="title layout-row" style="border-bottom:none;">
+            <view class="blue-l"/>
+            上传图片
+        </view>
+        <view class="upload-img">
+            <block  wx:if="{{uploadImage==''}}">
+                <image src="/images/jj.png" class="upload-item" bindtap="chooseImage"/>
+            </block>
+            <block  wx:else>
+                <image src="{{uploadImage}}" class="upload-item" bindtap="previewImgTap"/>
+            </block>
+            <view class="upload-del layout-row" wx:if="{{uploadImage!=''}}" bindtap="chooseImage">
+                <image src="/images/camera.png" class="upload-icon"/> 重新上传图片
+            </view>
+        </view>
+        <view class="footer layout-row">
+            <view class="footer-btn" bindtap="backTap"> 返回上一级</view>
+            <!-- <view class="footer-btn red" wx:if="{{courseId>0}}" bindtap="removeTap">删除</view> -->
+            <view class="footer-btn blue" bindtap="addTap">{{courseId>0?'修改课程表':'添加课程表'}}</view>
+        </view>
+    </view>

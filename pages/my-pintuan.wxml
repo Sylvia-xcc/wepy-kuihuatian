@@ -1,0 +1,54 @@
+
+    <view class="mypintuan"  wx:if="{{orderlist.length>0}}">
+        <block wx:for="{{orderlist}}" wx:key="olders">
+            <view class="box">
+                <view class="dingdan">
+                    <view class="oldernum">
+                        <view style="margin-right:0rpx;">订单号：{{item.order_sn}}</view>
+                        <!-- <view style='margin-right:10rpx;color:red' wx:if="{{item.status==20&&item.pintuan_status==1}}">待发货</view>
+                        <view style='margin-right:10rpx;color:red' wx:if="{{item.status==30&&item.pintuan_status==1}}">待收货</view>
+                        <view style='margin-right:10rpx;color:red' wx:if="{{item.status==40&&item.pintuan_status==1}}">已发货</view> -->
+                        <!-- <view style='margin-right:10rpx;color:red' wx:if="{{item.status==50&&item.pintuan_status==1}}">交易已完成</view> -->
+                    </view>
+                    <view class="alldetail">
+                        <view class="olderdetail" bindtap="goodsDetailTap" data-id="{{item.pid}}" data-timetip="{{item.timeTip}}">
+                            <image src="{{item.pro_photo}}" class="item-img"/>
+                            <view class="item-time" wx:if="{{item.pintuan_status<1}}">
+                                <image class="item-shijian" src="/images/shijian.png"/>
+                                <text>{{item.timeTip}}</text>
+                            </view>
+                            <view class="detmiddle">
+                                <view class="name">
+                                    <text>{{item.pro_name}}</text>
+                                </view>
+                                <view class="name1">
+                                    <text class="jiage">￥{{item.pro_price}}</text>
+                                    <text wx:if="{{item.need_num!=null}}" class="renshu">【{{item.need_num}}人团】</text>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="bottom">
+                            <view>
+                                <text class="shifukuan">实付款: {{item.pay_money}}</text>
+                            </view>
+                            <view class="zhuangtai">
+                                <text class="yiwancheng" wx:if="{{item.pintuan_status==1}}">拼团已完成</text>
+                                <button class="yaoqing" open-type="share" wx:if="{{item.pintuan_status==0&&item.pintuan_header==1}}" data-id="{{item.pid}}" data-pintuanid="{{item.pintuan_id}}">邀请好友拼团</button>
+                                <text class="shibai" wx:if="{{item.pintuan_status==2}}">拼团失败</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="oldermoney" wx:if="{{item.status==40}}">
+                        <view>
+                            <button wx:if="{{item.status==40}}" style="background-color:#594040;color:#fff;" size="mini" data-index="{{index}}" bindtap="shouhuo" hover-class="defaultTap">确认收货</button>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view  wx:else class="nodata">
+        <!--如果无数据，则显示数据-->
+        <image src="/images/dingdan.png"/>
+        <text>暂无相关订单</text>
+    </view>

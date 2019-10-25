@@ -1,0 +1,208 @@
+
+    <view class="con"  wx:if="{{exist}}">
+        <view class="header">
+            
+    <swiper class="swiper" indicator-dots="true" circular="circular" easing-function="linear" autoplay="{{$myBanner$autoplay}}" interval="{{$myBanner$interval}}" bindchange="$myBanner$swiperChange" style="height:{{$myBanner$height}}px">
+        <swiper-item  wx:if="{{$myBanner$videoUrl!=''}}">
+            <video id="myvideo" src="{{$myBanner$videoUrl}}" style="width:100%;height:100%;" bindplay="$myBanner$play" bindpause="$myBanner$pause" bindended="$myBanner$pause" controls="{{$myBanner$false}}" show-center-play-btn="{{$myBanner$false}}"/>
+        </swiper-item>
+        <block  wx:for="{{$myBanner$banner}}" wx:key="this">
+            <swiper-item>
+                <image src="{{item.url}}" data-src="{{item}}" bindtap="$myBanner$previewImgTap" bindload="$myBanner$setContainerHeight" mode="widthFix"/>
+            </swiper-item>
+        </block>
+        <view class="playBtn" wx:if="{{$myBanner$videoUrl!='' && $myBanner$current==0 }}" bindtap="$myBanner$playVideo" style="top:{{$myBanner$btnH}}px;">
+            <image class="play-img" src="../images/pause_btn.png" wx:if="{{$myBanner$isVideoPlay}}"/>
+            <image class="play-img" src="../images/play_btn.png" wx:else/>
+        </view>
+    </swiper>
+
+            <view class="price_detail">
+                <view class="price">
+                    <text class="nprice">￥{{(vip==0)?product.price_yh:product.price_vip}}</text>
+                    <text class="oprice">原价￥{{product.price}}</text>
+                </view>
+                <view class="countdown_con"  wx:if="{{productType==20}}">
+                    <block wx:if="{{miaoshaojiesu}}">
+                        <text class="countdown_text" style="margin-top:30rpx;">秒杀活动已结束</text>
+                    </block>
+                    <block wx:else>
+                        <text class="countdown_text">距离结束仅剩</text>
+                        <view>
+                            <text class="countdown_box">{{timetips[0]}}</text>天
+                            <text class="countdown_box">{{timetips[1]}}</text>时
+                            <text class="countdown_box">{{timetips[2]}}</text>分
+                            <text class="countdown_box">{{timetips[3]}}</text>秒
+                        </view>
+                    </block>
+                </view>
+            </view>
+        </view>
+        <view class="body">
+            <!-- 文字详情 -->
+            <view class="detail">
+                <text class="detail_title">{{product.name}}</text>
+                <text class="detail_desc">{{product.intro}}</text>
+            </view>
+            <!-- 保障描述 -->
+            <view class="baozhang" wx:if="{{labels.length>0}}">
+                <block wx:for="{{labels}}" wx:key="{{index}}">
+                    <view class="box">
+                        <image src="/images/gou.png" class="box-img"/>
+                        <text class="box-txt">{{item}}</text>
+                    </view>
+                </block>
+            </view>
+        </view>
+        <!-- 拼团 -->
+        <view class="pintuan" wx:if="{{ pintuanlist.length>0}}">
+            <view class="pintuan_top">
+                <text>已有<text style="color:green;">{{pintuanlist.length}}人</text>正在拼团,可直接参与</text>
+                <image src="/images/dian.png" style="width:33rpx;height:6rpx; margin-right:24rpx;"/>
+            </view>
+            <view class="pintuan_con">
+                <swiper display-multiple-items="{{pintuanlist.length==1?'1':'2'}}" vertical="true" autoplay="true" interval="3000" duration="1000" style="height:{{ptheight}}px">
+                    <swiper-item wx:for="{{pintuanlist}}" wx:key="index">
+                        <view class="pintuan_item">
+                            <image src="{{item.user_photo}}"/>
+                            <text class="pintuan_item_name">{{item.user_name}}</text>
+                            <view class="pintuan_item_middle">
+                                <text>还差<text style="color:#D11C16">{{item.need_num-item.now_num}}</text>人</text>
+                                <text>剩余  {{item.timeTip}}</text>
+                            </view>
+                            <view class="pintuan_item_btn" data-id="{{item.id}}" data-uid="{{item.uid}}" data-optype="cantuan" bindtap="buyTap">去参团</view>
+                        </view>
+                    </swiper-item>
+                </swiper>
+            </view>
+        </view>
+        
+  <import src="../plugins/wxParse/wxParse.wxml"/>
+  <block  wx:for="{{$htmlParser$htmlParserTpl.nodes}}" wx:key="{{index}}">
+    <template is="wxParse0" data="{{item}}"/>
+  </block>
+
+    </view>
+    <!-- 底部 -->
+    <view class="footer"  wx:if="{{exist}}">
+        <view class="footer_left">
+            <view class="footer_home" bindtap="gohomeTap">
+                <image src="/images/icon_home_active.png"/>
+            </view>
+            <view class="footer_collect" bindtap="collectTap">
+                <image src="/images/normal.png" wx:if="{{is_collect==0}}"/>
+                <image src="/images/selected.png" wx:else/>
+            </view>
+        </view>
+        <view class="footer_right">
+            <block wx:if="{{productType!=10}}">
+                <view class="footer_addcart" data-optype="addcart" bindtap="buyTap" wx:if="{{!(productType==10)}}">加入购物车</view>
+                <view class="footer_buy" data-optype="buynow" bindtap="buyTap">立即购买</view>
+            </block>
+            <block wx:else>
+                <!-- <view class='footer_pintuan center-col' data-optype='buynow' bindtap='buyTap'>{{product.price_yh}}
+                                                                                                                                                            <text>单独购买</text> </view> -->
+                <!-- <view class='footer_pintuan_y center-col' data-optype='pintuan' bindtap='buyTap'>{{product.pintuan_price}}
+                                                                                                                                                            <text>发起拼单</text> </view> -->
+                <view class="footer_buy" style="width:100%;" data-optype="pintuan" bindtap="buyTap">发起拼团 <text style="font-size:22rpx;font-weight:200;">({{product.pintuan_num}}人团)</text></view>
+            </block>
+        </view>
+    </view>
+    <view  wx:if="{{!exist}}" class="center" style="margin-top:200rpx;">该商品不存在或已下架</view>
+    <!-- 分享弹窗 -->
+    <view class="poster-con">
+        <image src="/images/fenxiang.png" class="poster_btn" bindtap="showModalFx"/>
+    </view>
+    
+    <!--生成海报  -->
+    <view class="imagePathBox" hidden="{{!$poster$maskHidden}}" bindtap="$poster$closeTap">
+        <block  wx:if="{{$poster$showMask}}">
+            <button class="savealbum" catchtap="$poster$saveAlbum">保存海报</button>
+            <!-- 显示图像 -->
+            <image src="{{$poster$imagePath}}" class="generate" style="width: {{$poster$canvasData.width}}rpx;height: {{$poster$canvasData.height}}rpx; top:{{$poster$canvasData.top}}rpx; left:{{$poster$canvasData.left}}rpx;" catchtap="$poster$tempTap"/>
+        </block>
+        <!-- 画布 -->
+        <canvas style="width: {{$poster$canvasData.width}}px;height: {{$poster$canvasData.height}}px;position:fixed;top:999999rpx;left:0px;border:1px solid red;background: red;" canvas-id="xcanvas"/>
+    </view>
+
+    
+    <view bindtap="$popup$toggleModal" class="pop-mask {{$popup$showModal?'active':''}}">
+    </view>
+    <view class="pop-content {{$popup$showModal?'active':''}}">
+        
+        <view class="fx-popup-container">
+            <view class="center-col popuo_fx_txt">
+                <image src="/images/poster.png" class="fx-popp-icon" bindtap="posterTap"/>
+                保存海报
+            </view>
+            <view class="share_con center-col popuo_fx_txt">
+                <image src="/images/wechat.png" class="fx-popp-icon"/>
+                <button open-type="share" class="fx-popp-btn" red="red"> </button> 微信转发
+            </view>
+        </view>
+    
+    </view>
+
+    <!-- 属性选择弹窗 -->
+    
+    
+    <view bindtap="$commodity$popup$toggleModal" class="pop-mask {{$commodity$popup$showModal?'active':''}}">
+    </view>
+    <view class="pop-content {{$commodity$popup$showModal?'active':''}}">
+        
+        <view class="cart-popup-container">
+            <view class="cart-popup-con">
+                <view class="cart-popup-top">
+                    <image src="{{$commodity$cartData.imgUrl}}" class="cart-popup-top-img" mode="aspectFit"/>
+                    <view class="cart-popup-top-right">
+                        <text class="cart-popup-top-pricenew">￥{{$commodity$cartData.price}}<text class="cart-popup-top-priceold">￥{{$commodity$cartData.price_old}}</text></text>
+                        <text class="stock">库存：{{$commodity$cartData.stock}}</text>
+                        <view  wx:if="{{$commodity$show_attr_value}}">
+                            <text class="cart-popup-top-choose fts24">已选： </text>
+                            <block wx:for="{{$commodity$attrValueList}}" wx:for-item="item" wx:key="{{index}}">
+                                <text class="cart-popup-top-choose fts24">{{item.selectedValue==''?'':('"'+item.selectedValue+'"')}} </text>
+                            </block>
+                        </view>
+                    </view>
+                </view>
+                <scroll-view class="attr-box" scroll-y style="max-height:500rpx;">
+                    <block  wx:for="{{$commodity$attrValueList}}" wx:for-item="attrValueObj" wx:for-index="attrIndex" wx:key="{{index}}">
+                        <view class="cart-popup-date ftb24">
+                            {{attrValueObj.attr_name}}
+                            <view class="cart-popup-date-con">
+                                <block wx:for="{{attrValueObj.guige_list}}" wx:for-item="item" wx:key="{{item.id}}">
+                                    <view class="cart-popup-item {{item.name==attrValueObj.selectedValue?'active':''}}" data-id="{{item.id}}" bindtap="$commodity$selectAttrValueTap" data-value="{{item.name}}" data-selectedValue="{{attrValueObj.selectedValue}}" data-idx="{{attrIndex}}">
+                                        {{item.name}}
+                                    </view>
+                                </block>
+                            </view>
+                        </view>
+                    </block>
+                </scroll-view>
+                <view class="shu">
+                    <text class="cun">购买数量</text>
+                    <view class="dian">
+                        <view class="stepper">
+                            <!-- 减号 -->
+                            <text class="{{$commodity$buynum<=1?'disabled':''}}" data-alpha-beta="0" bindtap="$commodity$changeNum">—</text>
+                            <!-- 数值 -->
+                            <view class="nownum">{{$commodity$buynum}}</view>
+                            <!-- 加号 -->
+                            <text class="normal" data-alpha-beta="1" bindtap="$commodity$changeNum">+</text>
+                        </view>
+                    </view>
+                </view>
+                <image class="cart-popup-close" src="../images/close.png" bindtap="$commodity$closeTap"/>
+            </view>
+            <view class="cart-popup-btnsure" bindtap="$commodity$sureCartTap">确定</view>
+        </view>
+    
+    </view>
+
+
+    <!-- 加载中动画 -->
+    
+    <view class="loading"  wx:if="{{$loading$show}}">
+        <image src="../images/logining.gif"/>
+        <text>{{$loading$message}}</text>
+    </view>

@@ -1,0 +1,57 @@
+.layout-container {
+  width: 750rpx;
+  margin: 30rpx auto;
+  margin-bottom: 50rpx;
+}
+.layout-container .layout-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.layout-container .layout-title .title {
+  height: 25rpx;
+  margin-left: 24rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-bottom: 10rpx;
+}
+.layout-container .layout-title .title .title-t1 {
+  color: #333;
+  font: bold 26rpx "PingFang-SC-Bold";
+  height: 25rpx;
+  line-height: 25rpx;
+  letter-spacing: 3rpx;
+  margin-right: 20rpx;
+}
+.layout-container .layout-title .title .title-t2 {
+  color: #999;
+  font: 20rpx "SanFranciscoDisplay-Regular";
+  height: 25rpx;
+}
+.layout-container .layout-title .dian {
+  width: 33rpx;
+  height: 6rpx;
+  margin-right: 24rpx;
+}
+.item-mask {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12rpx 12rpx 0rpx 0rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item-mask .item-mask-sk {
+  width: 204rpx;
+  height: 204rpx;
+}
+.item-mask .item-mask-over {
+  width: 204rpx;
+  height: 180rpx;
+}

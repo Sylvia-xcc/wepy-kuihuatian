@@ -1,0 +1,35 @@
+
+    <view class="box-bg">
+        <text class="t1">今天</text>
+        <text class="t2">{{today.month}}月{{today.day}}日</text>
+        <view class="t3" bindtap="addCourseTap"  wx:if="{{level>=3}}">
+            <image src="/images/jia.png"/> 新增课程
+        </view>
+    </view>
+    <view class="section">
+        <!-- 左侧类型 -->
+        <scroll-view scroll-y="true" class="left">
+            <view  wx:for="{{dates}}" wx:key="index" data-index="{{index}}" bindtap="dateTap" class="left-item {{index == currType ? 'active' : ''}}" style="font-size:28rpx">
+                {{item}}
+            </view>
+        </scroll-view>
+        <!-- 右侧数据 -->
+        <scroll-view scroll-y="true" class="right">
+            <view class="right-cont"  wx:if="{{list.length>0}}">
+                <block wx:for="{{list}}" wx:key="index" wx:for-item="item">
+                    <view data-course-id="{{item.course_id}}" class="right-item" bindtap="courseTap">
+                        <image src="{{item.thumb.url}}" class="right-item-img"/>
+                        <text class="l1">{{item.course_name}}</text>
+                        <text class="l2">时间：{{item.start_time}}-{{item.end_time}}</text>
+                        <text class="l3">主讲老师：{{item.lecturer.nickname}}</text>
+                        <image src="{{item.lecturer.photo}}" class="head-img"/>
+                    </view>
+                </block>
+            </view>
+            <view wx:else class="center" style="margin-top:200rpx;">该天暂无课程</view>
+        </scroll-view>
+    </view>
+    
+
+    <view>
+    </view>

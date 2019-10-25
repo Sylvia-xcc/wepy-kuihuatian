@@ -1,0 +1,203 @@
+/** less **/
+.mypintuan {
+  min-height: 100vh;
+  background: #f2f2f2;
+  width: 99.9%;
+  border: 1px solid #f2f2f2;
+  margin-top: 10rpx;
+}
+.box {
+  /* border: 1px solid red; */
+  width: 98%;
+  margin-left: 0.8%;
+  background: #fff;
+  margin-top: 10rpx;
+}
+/* 订单 */
+.older {
+  margin: 15rpx 0;
+  background-color: white;
+}
+.oldernum {
+  padding: 0rpx 0 0rpx 20rpx;
+  border-bottom: 1px solid #f2f2f2;
+  color: #666666;
+  font-size: 20rpx;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+}
+.olderStatus {
+  color: #000;
+}
+.alldetail {
+  margin-bottom: 10rpx;
+}
+.olderdetail {
+  display: flex;
+  align-items: center;
+  height: 188rpx;
+  border-bottom: 1px solid #f2f2f2;
+  position: relative;
+}
+.olderdetail .item-img {
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 10px;
+}
+.detmiddle {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  height: 188rpx;
+}
+.name {
+  font: bold 26rpx "PingFangSC-Semibold";
+  color: #333333;
+  margin-top: 20rpx;
+}
+.name1 {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+.jiage {
+  font: 26rpx "PingFangSC-Regular";
+  color: #ff3b30;
+}
+.renshu {
+  font-size: 26rpx;
+  color: #333333;
+}
+.bottom {
+  /* display: flex; */
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  height: 60rpx;
+  line-height: 60rpx;
+  /* margin-bottom: 20rpx; */
+}
+.shifukuan {
+  margin-left: 20rpx;
+}
+.zhuangtai {
+  margin-right: 24rpx;
+  font-size: 22rpx;
+  /* border: 1px solid red; */
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.yaoqing {
+  background: #f95555;
+  color: #fff;
+  /* border: 1px solid #999; */
+  border-radius: 10rpx;
+  /* padding: 8rpx 10rpx 8rpx 10rpx; */
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 22rpx;
+}
+.yiwancheng {
+  background: #fff;
+  color: #666666;
+  /* border: 1px solid #999; */
+  border-radius: 10rpx;
+  padding: 8rpx 10rpx 8rpx 10rpx;
+  border: 1px solid #666666;
+}
+.shibai {
+  background: #fff;
+  color: #666666;
+  /* border: 1px solid #999; */
+  border-radius: 10rpx;
+  padding: 8rpx 10rpx 8rpx 10rpx;
+  border: 1px solid #666666;
+}
+.olderdetail > view {
+  flex: 1;
+  align-self: flex-start;
+}
+.time {
+  padding-left: 20rpx;
+  color: #999;
+}
+.money {
+  color: #ffc000;
+  margin-right: 20rpx;
+  float: right;
+}
+.oldermoney {
+  /* border: 1px solid red; */
+  height: 40px;
+}
+.btn1 {
+  border: 1px solid #999;
+  width: 70px;
+  height: 25px;
+  line-height: 25px;
+  margin-top: 10rpx;
+  border-radius: 6px;
+  text-align: center;
+  margin-right: 20rpx;
+}
+.dingdan {
+  /* border: 1px solid red;  */
+  /* margin-bottom: 20rpx; */
+  background: white;
+}
+.kong-img {
+  /* border: 1px solid red;  */
+  width: 427rpx;
+  margin: 0 auto;
+  margin-top: 2rpx;
+  height: 356rpx;
+  padding-top: 120rpx;
+}
+.kong-img image {
+  width: 100%;
+  height: 356rpx;
+}
+.olderdetail .item-time {
+  width: 180rpx;
+  height: 40rpx;
+  background: rgba(0, 0, 0, 0.3);
+  /* border-radius: 0rpx 0rpx 12rpx 12rpx; */
+  position: absolute;
+  bottom: 4rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.item-time image {
+  width: 24rpx;
+  height: 24rpx;
+  /* margin-left: 8rpx;  */
+}
+.item-time text {
+  font-size: 18rpx;
+  font-family: PingFangSC-Regular;
+  color: #ffffff;
+  white-space: nowrap;
+  margin-left: 4rpx;
+}
+.nodata image {
+  width: 160rpx;
+  height: 173rpx;
+  display: block;
+  margin-left: 294rpx;
+  margin-top: 420rpx;
+}
+.nodata text {
+  font: 28rpx "PingFang-SC-Regular";
+  color: #ee451f;
+  margin-left: 292rpx;
+}

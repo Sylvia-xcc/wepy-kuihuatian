@@ -1,0 +1,21 @@
+@import "./../components/common/bottomLoadMore.wxss";
+@import "./../components/layout/classifycon.wxss";
+/** less **/
+page {
+  background: #fbfbfb;
+}
+.nav {
+  height: 63rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.nav .cu-item {
+  color: #939393;
+  line-height: 59rpx;
+  height: 59rpx;
+}
+.nav .cu-item.active {
+  color: #000;
+  border-bottom: 2rpx solid #000;
+}

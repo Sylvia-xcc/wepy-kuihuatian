@@ -1,0 +1,28 @@
+@import "./popup.wxss";
+/** less **/
+.del-con {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.del-con .del-btn {
+  color: red;
+  border-bottom: 2rpx solid #D7D7D7;
+}
+.del-con .del-title {
+  font-size: 24rpx;
+  border-bottom: 2rpx solid #D7D7D7;
+}
+.del-con .cancel-btn {
+  color: #5A5A5A;
+}
+.del-con .btn {
+  width: 100%;
+  font-size: 32rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  vertical-align: middle;
+}

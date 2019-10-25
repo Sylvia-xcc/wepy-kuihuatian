@@ -1,0 +1,100 @@
+
+    <view class="con">
+        <view class="address">
+            <view class="hasaddress c2">
+                <view class="l1">
+                    <image class="dian c1" src="/images/sureorder/dian.png"/>
+                    <text class="t1 c1">学生姓名:</text>
+                    <text class="addrname c1">{{orderData.student_info.name}}</text>
+                    <view class="tel">
+                        <image class="c1" src="/images/sureorder/phone.png" style="width:21rpx; height:29rpx"/>
+                        <text class="c1">{{orderData.student_info.parents_phone}}</text>
+                    </view>
+                </view>
+                <view class="l2">
+                    <image class="pos c1" src="/images/sureorder/pos.png"/>
+                    <text class="c1 showone">{{orderData.address_xq}}</text>
+                </view>
+            </view>
+        </view>
+        <!-- 订单商品 -->
+        <view class="goods">
+            <block  wx:for="{{productData}}" wx:key="{{index}}">
+                <view class="item" data-id="{{item.pro_id}}" bindtap="detailTap">
+                    <image class="item-img" src="{{item.pro_thumb}}"/>
+                    <view class="item-cont">
+                        <text class="item_name showone">{{item.pro_name}}</text>
+                        <text class="item_desc showtwo" wx:if="{{item.pro_buff.length>0}}">选择：{{item.pro_buff}}</text>
+                        <text class="rbm">RMB  <text class="item_price">{{item.pro_price}}</text></text>
+                    </view>
+                    <view class="item-count quan">x{{item.pro_num}}</view>
+                </view>
+            </block>
+        </view>
+        <!-- 订单号 -->
+        <view class="juan">
+            <image class="dian c1 c2" src="/images/sureorder/dian.png"/>
+            <view class="c1 font28">订单号</view>
+            <text class="rbm2"><text class="fts24">{{orderData.order_sn}}</text></text>
+        </view>
+        <!-- 支付方式 -->
+        <!-- <view class='juan'>
+            <image class='dian c1 c2' src='/images/sureorder/dian.png'></image>
+            <view class='c1 font28'>支付方式</view>
+            <text class='rbm2'><text class='fts24'>{{orderData.pay_type == '现金支付'?'余额支付':orderData.pay_type}}</text></text>
+        </view> -->
+        <!-- 快递单号 -->
+        <!-- <view class='juan' wx:if="{{orderData.kuaidi_numbe!=null}}">
+                        <image class='dian c1 c2' src='/images/sureorder/dian.png'></image>
+                        <view class='c1 font28'>快递单号</view>
+                        <text class='rbm2'><text class='fts24'>{{orderData.kuaidi_number}}</text></text>
+                    </view> -->
+        <!-- 商品总价 -->
+        <view class="juan">
+            <image class="dian c1 c2" src="/images/sureorder/dian.png"/>
+            <view class="c1 font28">商品总价</view>
+            <text class="rbm2">RMB  <text class="fts24">{{orderData.price}}</text></text>
+        </view>
+        <!-- 优惠劵满减 -->
+        <!-- <view class='juan' wx:if="{{youhui>0}}">
+                        <image class='dian c1 c2' src='/images/sureorder/dian.png'></image>
+                        <view class='c1 font28'>优惠劵满减</view>
+                        <text class='rbm2'>RMB  <text class='fts24'>{{youhui}}</text></text>
+                    </view> -->
+        <!-- 运费 -->
+        <!-- <view class='juan'>
+                        <image class='dian c1 c2' src='/images/sureorder/dian.png'></image>
+                        <view class='c1 font28'>运费</view>
+                        <text class='rbm2'>RMB  <text class='fts24'>{{orderData.express_money}}</text></text>
+                    </view> -->
+        <!-- 备注 -->
+        <view class="beizhu">
+            <image class="dian c1 c2" src="/images/sureorder/dian.png"/>
+            <view class="c1 font28"> 备注</view>
+            <view class="beizhu-txt">{{orderData.remark==""?"无":orderData.remark}}</view>
+        </view>
+        <!-- 支付截图 -->
+        <view class="payonline"  wx:if="{{!(orderData.pay_type==='现金支付')}}">
+            <view class="beizhu">
+                <image class="dian c1 c2" src="/images/sureorder/dian.png"/>
+                <view class="c1 font28">支付截图</view>
+                <!-- <view class="paycont"> -->
+                <view class="pic-cont">
+                    <block wx:if="{{orderData.pay_prove===''||orderData.pay_prove== null}}">
+                        <image src=" /images/pic.png " class="pic-img ">
+                        </image>
+                    </block>
+                    <block wx:else>
+                        <image src="{{orderData.pay_prove}}" class="pic-img" data-src="{{orderData.pay_prove}}" bindtap="previewImgTap"/>
+                    </block>
+                </view>
+                <!-- </view> -->
+            </view>
+        </view>
+    </view>
+    <!-- 提交订单 -->
+    <view class="footer">
+        <view class="footer-status">{{orderData.order_status}}</view>
+        <text>实付</text>
+        <text class="rbm3">RMB  <text class="fts32">{{orderData.amount}}</text></text>
+    </view>

@@ -1,0 +1,182 @@
+/** less **/
+page {
+  background: #fcfbfb;
+}
+.con {
+  width: 750rpx;
+  height: 566rpx;
+  background: #fff;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background: orange; */
+}
+.userinfo-avatar {
+  width: 206rpx;
+  height: 206rpx;
+  margin: 49rpx auto;
+  border-radius: 50%;
+  box-shadow: 0px 0px 20px 0px rgba(234, 234, 234, 0.75);
+}
+.userinfo-nickname {
+  color: #000;
+  font: 34rpx "PingFang-SC-Heavy";
+  opacity: 0.78;
+  position: absolute;
+  margin-top: 265rpx;
+}
+.userinfo-nickinfo {
+  color: #000;
+  font: 24rpx "PingFang-SC-Heavy";
+  opacity: 0.4;
+  position: absolute;
+  margin-top: 307rpx;
+  text-align: center;
+}
+.loginbtn {
+  width: 160rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+  color: #333;
+  line-height: 50rpx;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 24rpx;
+  font-weight: 500;
+  margin: 0 auto;
+  margin-top: -20rpx;
+  border: 3rpx #666 solid;
+  background: #ccc;
+}
+.usermotto {
+  width: 100%;
+  height: 120rpx;
+  /* background: green; */
+  position: absolute;
+  top: 389rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.usermotto-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: middle;
+  align-items: center;
+}
+.usermotto image {
+  width: 72rpx;
+  height: 72rpx;
+}
+.usermotto text {
+  font: bold 28rpx "PingFang-SC-Bold";
+  color: #333333;
+  margin-top: 10rpx;
+}
+.order {
+  width: 100%;
+  margin-top: 68rpx;
+  position: relative;
+}
+.order .myorder .o1 {
+  font: bold 30rpx "PingFang-SC-Bold";
+  color: #d21e16;
+  /* background: greenyellow; */
+  position: absolute;
+  left: 70rpx;
+}
+.order .myorder .o2 {
+  font: 22rpx "PingFang-SC-Regular";
+  color: #999999;
+  /* background: red; */
+  position: absolute;
+  right: 80rpx;
+}
+.order .myorder .o3 {
+  font: 22rpx "PingFang-SC-Medium";
+  color: #999999;
+  /* background: red; */
+  position: absolute;
+  left: 70rpx;
+  top: 45rpx;
+}
+.o4 {
+  width: 24rpx;
+  height: 20rpx;
+  position: absolute;
+  right: 44rpx;
+  top: 6rpx;
+}
+.orderlist {
+  position: absolute;
+  left: 50rpx;
+  top: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 86%;
+  margin-top: 15rpx;
+}
+.orderlist view {
+  width: 120rpx;
+  height: 100rpx;
+  /* background: greenyellow; */
+  /* float: left; */
+  margin: 0 20rpx;
+  text-align: center;
+}
+.orderlist image {
+  width: 50rpx;
+  height: 50rpx;
+}
+.orderlist text {
+  font: 26rpx "PingFang-SC-Medium";
+  color: #999999;
+  display: inline-block;
+}
+.infoinfo {
+  width: 100%;
+  position: absolute;
+  top: 920rpx;
+}
+.infoinfo .ol {
+  width: 702rpx;
+  height: 74rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  margin-left: 24rpx;
+  margin-bottom: 30rpx;
+  /* position: relative; */
+}
+.infoinfo .ol text {
+  font: 28rpx "PingFang-SC-Regular";
+  color: #666666;
+  /* background: orange; */
+  display: inline-block;
+  margin-left: 15rpx;
+  margin-top: 19rpx;
+}
+.infoinfo .ol .dian2 {
+  width: 10rpx;
+  height: 5rpx;
+  background: #9de273;
+  box-shadow: 0px 4rpx 10rpx 0rpx rgba(157, 226, 115, 0.56);
+  border-radius: 3rpx;
+  float: left;
+  margin-left: 24rpx;
+  margin-top: 37rpx;
+}
+.dian {
+  width: 10rpx;
+  height: 5rpx;
+  background: #9de273;
+  box-shadow: 0px 4rpx 10rpx 0rpx rgba(157, 226, 115, 0.56);
+  border-radius: 3rpx;
+  position: absolute;
+  left: 48rpx;
+  top: 20rpx;
+}

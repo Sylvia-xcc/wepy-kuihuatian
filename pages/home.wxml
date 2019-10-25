@@ -1,0 +1,279 @@
+
+    <view>
+        <view class="search">
+            <navigator class="search_kuang" url="/pages/search">
+                <view class="search-dian" style="left:50rpx; top:48rpx;"/>
+                <input class="search_input" disabled placeholder="请输入您想搜索的内容"/>
+                <image src="../images/search.png" class="search_icon"/>
+            </navigator>
+        </view>
+        <swiper class="swiper" indicator-dots autoplay circular="circular" easing-function="linear" style="height:{{windowHeight}}px">
+            <block  wx:for="{{bannerList}}" wx:key="key">
+                <swiper-item>
+                    <image class="slide-image" src="{{item.slide_pic}}" bindload="setContainerHeight" data-url="{{item.slide_url}}" bindtap="swiperTap"/>
+                </swiper-item>
+            </block>
+        </swiper>
+        <block  wx:if="{{loaded}}">
+            <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+                <block wx:if="{{item.show_type.value==10}}">
+                    
+    <view class="layout-container">
+        <view class="layout-title" bindtap="$layoutone$_goodTitleTap" data-com-index="{{index}}">
+            <view class="title">
+                <view class="title-t1">{{item.name}}</view>
+                <view class="title-t2">{{item.desc}}</view>
+            </view>
+            <image src="/images/dian.png" class="dian"/>
+        </view>
+        <view class="content-one"  wx:for="{{item.goods_lists}}" wx:key="wx:key">
+            <view class="item" data-id="{{item.id}}" bindtap="$layoutone$_goodTap" data-com-index="{{index}}">
+                <view class="item-left">
+                    <image src="{{item.thumb_d}}" mode="aspectFill"/>
+                    <view class="item-time" wx:if="{{item.showTimer && item.timeTip!='' && item.stock>0}}">
+                        <image class="item-sj" src="/images/shijian.png"/>
+                        {{item.timeTip[0]}}:{{item.timeTip[1]}}:{{item.timeTip[2]}}:{{item.timeTip[3]}}
+                    </view>
+                    <block>
+                        <!-- 售空 -->
+                        <view class="item-mask" wx:if="{{item.stock<=0}}">
+                            <image src="/images/sk.png" class="item-mask-sk" mode="widthFix"/>
+                        </view>
+                        <!-- 秒杀1：活动结束 -->
+                        <view class="item-mask" wx:elif="{{item.showTimer && item.timeTip==''}}">
+                            <image src="/images/over.png" class="item-mask-over" mode="widthFix"/>
+                        </view>
+                    </block>
+                </view>
+                <view class="item-right">
+                    <text class="item-name showone block">{{item.name}}</text>
+                    <text class="item-desc showone block">{{item.intro}}</text>
+                    <text class="item-price block">{{item.goods_type.value==10?'拼团价：':''}}￥{{(vip==0)?item.price_yh:item.price_vip}}</text>
+                    <text class="item-oldprice block">原价：{{item.price}}</text>
+                </view>
+                <view class="item-stock block">库存
+                    <block wx:if="{{item.stock<=0}}">0</block>
+                    <block wx:else>{{item.stock}}</block>件</view>
+                <view class="item-btn">查看详细
+                    <image src="/images/x_right.png" class="x-right"/>
+                </view>
+            </view>
+        </view>
+    </view>
+
+                </block>
+                <block  wx:elif="{{item.show_type.value==20}}">
+                    
+    <view class="layout-container">
+        <view class="layout-title" bindtap="$layouttwo$_goodTitleTap" data-com-index="{{index}}">
+            <view class="title">
+                <view class="title-t1">{{item.name}}</view>
+                <view class="title-t2">{{item.desc}}</view>
+            </view>
+            <image src="/images/dian.png" class="dian"/>
+        </view>
+        <view class="content-two">
+            <block  wx:for="{{item.goods_lists}}" wx:key="{{index}}">
+                <view class="item" data-id="{{item.id}}" bindtap="$layouttwo$_goodTap" data-com-index="{{index}}">
+                    <view class="item-top">
+                        <image src="{{item.thumb_d}}" mode="aspectFill"/>
+                        <view class="item-time" wx:if="{{item.showTimer && item.timeTip!='' && item.stock>0}}">
+                            <image class="item-sj" src="/images/shijian.png"/>
+                            {{item.timeTip[0]}}:{{item.timeTip[1]}}:{{item.timeTip[2]}}:{{item.timeTip[3]}}
+                        </view>
+                        <block>
+                            <!-- 售空 -->
+                            <view class="item-mask" wx:if="{{item.stock<=0}}">
+                                <image src="/images/sk.png" class="item-mask-sk" mode="widthFix"/>
+                            </view>
+                            <!-- 秒杀1：活动结束 -->
+                            <view class="item-mask" wx:elif="{{item.showTimer && item.timeTip==''}}">
+                                <image src="/images/over.png" class="item-mask-over" mode="widthFix"/>
+                            </view>
+                        </block>
+                    </view>
+                    <view class="item-bottom">
+                        <text class="item-name showone">{{item.name}}</text>
+                        <text class="item-oldprice">原价：{{item.price}}</text>
+                        <text class="item-price">￥{{(vip==0)?item.price_yh:item.price_vip}}</text>
+                        <view class="item-stock block">库存
+                            <block wx:if="{{item.stock<=0}}">0</block>
+                            <block wx:else>{{item.stock}}</block>件</view>
+                    </view>
+                    <image src="/images/cart-icon.png" class="item-cart"/>
+                </view>
+            </block>
+        </view>
+    </view>
+
+                </block>
+                <block  wx:elif="{{item.show_type.value==30}}">
+                    
+    <view class="layout-container">
+        <view class="layout-title" bindtap="$layoutthree$_goodTitleTap" data-com-index="{{index}}">
+            <view class="title">
+                <view class="title-t1">{{item.name}}</view>
+                <view class="title-t2">{{item.desc}}</view>
+            </view>
+            <image src="/images/dian.png" class="dian"/>
+        </view>
+        <view class="content-three">
+            <view class="item-con">
+                <block  wx:for="{{item.goods_lists}}" wx:key="{{index}}">
+                    <view class="item" data-id="{{item.id}}" bindtap="$layoutthree$_goodTap" data-com-index="{{index}}">
+                        <view class="item-top">
+                            <image src="{{item.thumb_d}}" mode="aspectFill"/>
+                            <view class="item-time" wx:if="{{item.showTimer && item.timeTip!='' && item.stock>0}}">
+                                <image class="item-sj" src="/images/shijian.png"/>
+                                {{item.timeTip[0]}}:{{item.timeTip[1]}}:{{item.timeTip[2]}}:{{item.timeTip[3]}}
+                            </view>
+                            <block>
+                                <!-- 售空 -->
+                                <view class="item-mask" wx:if="{{item.stock<=0}}">
+                                    <image src="/images/sk.png" class="item-mask-sk" mode="widthFix"/>
+                                </view>
+                                <!-- 秒杀1：活动结束 -->
+                                <view class="item-mask" wx:elif="{{item.showTimer && item.timeTip==''}}">
+                                    <image src="/images/over.png" class="item-mask-over" mode="widthFix"/>
+                                </view>
+                            </block>
+                        </view>
+                        <text class="item-name showone">{{item.name}}</text>
+                        <text class="item-oldprice">原价：￥{{item.price}}</text>
+                        <text class="item-newprice">￥{{(vip==0)?item.price_yh:item.price_vip}}</text>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+
+                </block>
+                <block  wx:elif="{{item.show_type.value==40}}">
+                    
+    <view class="layout-container">
+        <view class="layout-title" bindtap="$layoutscroll$_goodTitleTap" data-com-index="{{index}}">
+            <view class="title">
+                <view class="title-t1">{{item.name}}</view>
+                <view class="title-t2">{{item.desc}}</view>
+            </view>
+            <image src="/images/dian.png" class="dian"/>
+        </view>
+        <view class="content-scroll">
+            <scroll-view scroll-x="true" style="white-space:nowarp;width:100%;">
+                <block  wx:for="{{item.goods_lists}}" wx:key="{{index}}">
+                    <view class="item2" data-id="{{item.id}}" bindtap="$layoutscroll$_goodTap" data-com-index="{{index}}">
+                        <view class="item-top">
+                            <image src="{{item.thumb_d}}" mode="aspectFill"/>
+                            <view class="item-time" wx:if="{{item.showTimer && item.timeTip!='' && item.stock>0}}">
+                                <image src="/images/shijian.png"/>
+                                {{item.timeTip[0]}}:{{item.timeTip[1]}}:{{item.timeTip[2]}}:{{item.timeTip[3]}}
+                            </view>
+                            <block>
+                                <!-- 售空 -->
+                                <view class="item-mask" wx:if="{{item.stock<=0}}">
+                                    <image src="/images/sk.png" class="item-mask-sk" mode="widthFix"/>
+                                </view>
+                                <!-- 秒杀1：活动结束 -->
+                                <view class="item-mask" wx:elif="{{item.showTimer && item.timeTip==''}}">
+                                    <image src="/images/over.png" class="item-mask-over" mode="widthFix"/>
+                                </view>
+                            </block>
+                        </view>
+                        <view class="item-bottom">
+                            <view class="item-name showone">{{item.name}}</view>
+                            <view class="item-oldprice">原价：￥{{item.price}}</view>
+                            <view class="item-price">现价：￥{{(vip==0)?item.price_yh:item.price_vip}}</view>
+                        </view>
+                    </view>
+                </block>
+            </scroll-view>
+        </view>
+    </view>
+
+                </block>
+                <block  wx:elif="{{item.show_type.value==50}}">
+                    
+    <view class="layout-container">
+        <view class="layout-title" bindtap="$layouttwo$_goodTitleTap" data-com-index="{{index}}">
+            <view class="title">
+                <view class="title-t1">{{item.name}}</view>
+                <view class="title-t2">{{item.desc}}</view>
+            </view>
+            <image src="/images/dian.png" class="dian"/>
+        </view>
+        <view class="content-two">
+            <block  wx:for="{{item.goods_lists}}" wx:key="{{index}}">
+                <view class="item" data-id="{{item.id}}" bindtap="$layouttwo$_goodTap" data-com-index="{{index}}">
+                    <view class="item-top">
+                        <image src="{{item.thumb_d}}" mode="aspectFill"/>
+                        <view class="item-time" wx:if="{{item.showTimer && item.timeTip!='' && item.stock>0}}">
+                            <image class="item-sj" src="/images/shijian.png"/>
+                            {{item.timeTip[0]}}:{{item.timeTip[1]}}:{{item.timeTip[2]}}:{{item.timeTip[3]}}
+                        </view>
+                        <block>
+                            <!-- 售空 -->
+                            <view class="item-mask" wx:if="{{item.stock<=0}}">
+                                <image src="/images/sk.png" class="item-mask-sk" mode="widthFix"/>
+                            </view>
+                            <!-- 秒杀1：活动结束 -->
+                            <view class="item-mask" wx:elif="{{item.showTimer && item.timeTip==''}}">
+                                <image src="/images/over.png" class="item-mask-over" mode="widthFix"/>
+                            </view>
+                        </block>
+                    </view>
+                    <view class="item-bottom">
+                        <text class="item-name showone">{{item.name}}</text>
+                        <text class="item-oldprice">原价：{{item.price}}</text>
+                        <text class="item-price">￥{{(vip==0)?item.price_yh:item.price_vip}}</text>
+                        <view class="item-stock block">库存
+                            <block wx:if="{{item.stock<=0}}">0</block>
+                            <block wx:else>{{item.stock}}</block>件</view>
+                    </view>
+                    <image src="/images/cart-icon.png" class="item-cart"/>
+                </view>
+            </block>
+        </view>
+    </view>
+
+                </block>
+            </block>
+        </block>
+    </view>
+    
+    <view class="loading"  wx:if="{{$loading$show}}">
+        <image src="../images/logining.gif"/>
+        <text>{{$loading$message}}</text>
+    </view>
+
+    <!--弹屏  types:0 图片  1：领红包  2：有活动  show 是否显示  @close 关闭回调  @callback 点击图片回调 或确定回调-->
+    
+    <view  wx:if="{{$bombscreen$show}}">
+        <view wx:if="{{$bombscreen$types===0}}">
+            <view class="pop-alert-box">
+                <image src="../images/icon_alert.png" class="icon_alert" catchtap="$bombscreen$callback"/>
+                <i class="iconfont icon-close" catchtap="$bombscreen$close"/>
+            </view>
+        </view>
+        <view wx:if="{{$bombscreen$types===2}}">
+            <view class="pop-activity-box">
+                <image src="../images/activity.png" catchtap="$bombscreen$callback"/>
+                <i class="iconfont icon-close" catchtap="$bombscreen$close"/>
+            </view>
+        </view>
+        <view wx:else>
+            <view class="pop-alert-box dialog">
+                <view class="alert-content-box">
+                    <view class="alert-content">
+                        <image src="../images/icon_alert.png" class="icon_alert_dialog"/>
+                        <view class="title">恭喜获得红包</view>
+                        <view class="title-doc">恭喜获得一张卡券，已发放至该账号</view>
+                    </view>
+                    <view class="btn_box">
+                        <view class="button type_red" catchtap="$bombscreen$callback">点击领取</view>
+                    </view>
+                </view>
+                <i class="iconfont icon-close" catchtap="$bombscreen$close"/>
+            </view>
+        </view>
+        <view class="alert_mask" catchtap="$bombscreen$close"/>
+    </view>

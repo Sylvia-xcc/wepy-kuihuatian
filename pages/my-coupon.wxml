@@ -1,0 +1,35 @@
+<wxs src="../wxs/mywxs.wxs" module="m1"/>
+
+    <view class="cont"  wx:if="{{juanlist.length>0}}">
+        <block wx:for="{{juanlist}}" wx:key="{{index}}">
+            <view class="item ">
+                <image src="/images/juan.png"/>
+                <view class="item-left">
+                    <view class="item-money">{{item.reduce_money}}优惠劵</view>
+                    <view class="item-tianjian">
+                        <block wx:if="{{item.coupon_type ==1}}">满{{item.full_money}}可用 </block>
+                        <block wx:else>无门槛</block>
+                    </view>
+                </view>
+                <view class="item-right">
+                    <view class="item-time center" wx:if="{{item.user_status==0}}">领取后{{item.day_num}}天可用</view>
+                    <view class="item-time center" wx:if="{{item.user_status!=0}}">{{m1.replace(item.start_time)}}-{{m1.replace(item.end_time)}}</view>
+                    <view class="item-use center">{{item.name}}</view>
+                    <block wx:if="{{item.state ==1}}">
+                        <view class="item-btn center">已过期</view>
+                    </block>
+                    <block wx:else>
+                        <view class="item-btn center" wx:if="{{item.user_status==0}}" data-ins="{{item.id}}" bindtap="linquTap">待领取</view>
+                        <view class="item-btn center" wx:if="{{item.user_status==1}}">已领取</view>
+                        <view class="item-btn center" wx:if="{{item.user_status==2}}">已使用</view>
+                    </block>
+                </view>
+            </view>
+        </block>
+        <view class="yijian_lq" bindtap="linquTap" data-ins="0">
+            一键领取
+        </view>
+    </view>
+    <view  wx:else class="no">
+        暂无优惠劵
+    </view>

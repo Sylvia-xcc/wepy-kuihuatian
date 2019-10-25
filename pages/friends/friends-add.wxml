@@ -1,0 +1,41 @@
+
+    <view class="textarea-con-con">
+        <textarea class="textarea-li" placeholder="这一刻的想法..." auto-height="{{true}}" maxlength="99999" value="{{comment}}" bindinput="bindinput">
+                                        </textarea>
+    </view>
+    
+    <view class="image-warpper">
+        <block  wx:if="{{$upLoadFile$upload_pic.length>0}}">
+            <view wx:for="{{$upLoadFile$upload_pic}}" wx:for-item="item" wx:key="index" class="image-item {{$upLoadFile$video!=''?'video-item':''}}">
+                <block wx:if="{{$upLoadFile$video!=''}}">
+                    <video src="{{item}}" class="video-item"/>
+                </block>
+                <block wx:else>
+                    <image src="{{item}}" mode="aspectFill" bindtap="$upLoadFile$previewImgTap" data-index="{{index}}"/>
+                </block>
+                <image src="/images/close2.png" class="image-del" bindtap="$upLoadFile$delTap" data-index="{{index}}"/>
+            </view>
+        </block>
+        <block  wx:if="{{$upLoadFile$upload_pic.length<$upLoadFile$upload_max && $upLoadFile$video==''}}">
+            <view class="image-item" bindtap="$upLoadFile$chooseImage">
+                <image src="/images/jj.png"/>
+            </view>
+        </block>
+        <block wx:if="{{$upLoadFile$upload_pic.length<=0}}">
+            <view class="image-item" bindtap="$upLoadFile$chooseVideo">
+                <image src="/images/video.png"/>
+            </view>
+        </block>
+    </view>
+
+    <view class="tip-con">
+        <text>*图片最多可以上传9张，每张大小不得超过20M</text>
+        <text>*视频最多可以上传一份，视频大小不得超过40M</text>
+    </view>
+    <view class="footer">
+        <view class="btn edit-btn" bindtap="cancelTap">放弃编辑</view>
+        <view class="btn fabu-btn" bindtap="fabuTap">立即发布</view>
+    </view>
+
+    <view>
+    </view>

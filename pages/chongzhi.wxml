@@ -1,0 +1,45 @@
+<wxs src="../wxs/mywxs.wxs" module="m1"/>
+
+    <view  wx:if="{{items.length>0}}"> 
+        <view class="header">
+            <image src="{{userInfo.avatarUrl}}"/>
+            <view>
+                <text class="header-info-t1">{{userInfo.nickName}}</text>
+                <!--<text class='header-info-t2'>一级会员</text>-->
+            </view>
+        </view>
+        <view class="body">
+            <text class="body-t1">请选择充值金额：</text>
+            <view class="body-con">
+                <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
+                    <block wx:for="{{items}}" wx:key="{{index}}">
+                        <view class="body-item {{selectId==index?'select':''}}" data-idx="{{index}}" data-id="{{item.id}}" data-pricenum="{{m1.filter(item.money)}}" data-give="{{m1.filter(item.addition)}}" bindtap="selectChongZhiTap">
+                            <view class="body-item-select">
+                                <image src="/images/chongzhi/selected.png" wx:if="{{selectId==index?true:false}}"/>
+                            </view>
+                            <text class="{{m1.filter(item.addition)==0?'body-item-t3':'body-item-t1'}}">{{m1.filter(item.money)}}元</text>
+                            <text class="body-item-t2" wx:if="{{m1.filter(item.addition)>0}}">送{{m1.filter(item.addition)}}元</text>
+                        </view>
+                    </block>
+                </scroll-view>
+            </view>
+            <view class="body-bottom">
+                <image src="/images/chongzhi/qian.png"/>
+                <view>{{m1.filter(items[selectId].money)}}</view>元
+            </view>
+            <view class="body-pay">
+                <text class="body-t1">请选择支付方式：</text>
+                <view class="body-pay-item">
+                    <image src="/images/chongzhi/wechat.png" class="body-pay-img"/>
+                    <text>微信</text>
+                    <image src="/images/chongzhi/gou2.png" class="body-pay-img2"/>
+                </view>
+            </view>
+        </view>
+        <view class="wx-btn" bindtap="chongzhiTap">
+            立即充值
+        </view>
+    </view>
+    <view  wx:else class="center-col" style="margin-top:300rpx;">
+        功能尚未开放，敬请期待！
+    </view>

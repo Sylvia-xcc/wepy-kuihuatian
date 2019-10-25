@@ -1,0 +1,124 @@
+/** less **/
+.con {
+  position: relative;
+}
+.con .course-img {
+  width: 750rpx;
+  height: 376rpx;
+}
+.con .course-num {
+  width: 160rpx;
+  height: 60rpx;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Semibold, PingFangSC;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 60rpx;
+  text-align: center;
+  vertical-align: middle;
+  position: absolute;
+  right: 24rpx;
+  top: 292rpx;
+}
+.con .course-edit {
+  width: 88rpx;
+  height: 88rpx;
+  position: absolute;
+  right: 24rpx;
+  top: 24rpx;
+}
+.con .course-content {
+  width: 702rpx;
+  height: 186rpx;
+  margin-left: 24rpx;
+  border-bottom: 2rpx solid #d8d8d8;
+  position: relative;
+  margin-top: 20rpx;
+}
+.con .course-content .li {
+  margin-top: 15rpx;
+}
+.con .course-content .li image {
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+}
+.con .course-content .li .tl {
+  font-size: 28rpx;
+  color: #626262;
+}
+.con .course-content .li .tl2 {
+  font-size: 32rpx;
+  color: #2b2b2b;
+  font-weight: bold;
+}
+.con .course-content .teacher-img {
+  position: absolute;
+  width: 128rpx;
+  height: 128rpx;
+  right: 24rpx;
+  top: 30rpx;
+  border-radius: 10rpx;
+}
+.con .sign {
+  width: 702rpx;
+  left: 24rpx;
+  display: flex;
+  flex-direction: column;
+  margin-left: 24rpx;
+}
+.con .sign .sign-txt {
+  font-size: 28rpx;
+  font-weight: bold;
+  margin: 20rpx 0rpx;
+}
+.con .sign .item {
+  width: 100%;
+  height: 72rpx;
+  margin-bottom: 20rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+.con .sign .item .item-left {
+  font-size: 28rpx;
+  color: #4d4d4d;
+  align-items: center;
+}
+.con .sign .item .item-left image {
+  width: 72rpx;
+  height: 72rpx;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+}
+.con .sign .item .item-right {
+  align-items: center;
+}
+.con .sign .item .item-right .item-num {
+  height: 60rpx;
+  border-radius: 12rpx;
+  border: 2rpx solid #979797;
+  color: #979797;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0rpx 20rpx;
+  margin-right: 20rpx;
+}
+.con .sign .item .item-right .item-btn {
+  width: 100rpx;
+  height: 60rpx;
+  background: linear-gradient(180deg, #0099ff 0%, #00c9ff 100%);
+  border-radius: 12rpx;
+  color: #fff;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  text-align: center;
+  vertical-align: middle;
+}
+.con .sign .item .item-right .singin {
+  background: #4d4d4d;
+  color: #fff;
+}

@@ -1,0 +1,25 @@
+
+    <view  wx:if="{{list.length>0}}" class="con">
+        <block wx:for="{{list}}" wx:key="{{index}}">
+            <view class="item">
+                <view class="item-top">
+                    <image src="{{item.student_photo}}" class="item-img"/>
+                    <view class="item-top-right">
+                        <view class="item-name">{{item.name}} {{item.parents_phone}}</view>
+                        <view class="item-decs">{{item.school_name}}</view>
+                    </view>
+                </view>
+                <view class="item-bottom">
+                    <radio class="item-moren" wx:if="{{optype!=''}}" data-item="{{item}}" catchtap="selectTap">选择</radio>
+                    <view class="item-btn item-edit" data-id="{{item.student_id}}" bindtap="editTap">编辑</view>
+                    <view class="item-btn item-del" data-id="{{item.student_id}}" bindtap="delTap">删除</view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view  wx:else class="no">
+        暂无学生信息
+    </view>
+    <navigator class="add-info" url="/pages/student/student-add">
+        去添加
+    </navigator>

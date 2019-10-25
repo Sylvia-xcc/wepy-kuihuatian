@@ -1,0 +1,134 @@
+/** less **/
+.top {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.top image {
+  width: 750rpx;
+  height: 364rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.top-top {
+  width: 100%;
+  min-height: 300rpx;
+}
+.top-title {
+  font: 32rpx "PingFangSC-Medium";
+  color: #ffffff;
+  padding-top: 88rpx;
+}
+.top-money {
+  font: 32rpx "PingFangSC-Medium";
+  color: #ffffff;
+  padding-top: 20rpx;
+}
+.top-tip {
+  font: 24rpx "PingFangSC-Medium";
+  color: rgba(255, 255, 255, 0.6);
+  padding-top: 10rpx;
+}
+.top text {
+  display: block;
+}
+.top-bottom {
+  width: 750rpx;
+  height: 132rpx;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.top-item {
+  text-align: center;
+  /* border: 1rpx red solid; */
+  padding-right: 15rpx;
+  border-right: 4rpx #fff solid;
+  width: 33%;
+}
+.none {
+  border-right: none;
+}
+.top-item text {
+  font-family: PingFangSC-Regular;
+  color: #ffffff;
+}
+.top-item-txt1 {
+  font-size: 32rpx;
+}
+.top-item-txt2 {
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+.bottom-title {
+  width: 100%;
+  height: 86rpx;
+  display: flex;
+  align-items: center;
+}
+.bottom-title-t1 {
+  font: bold 26rpx "PingFangSC-Semibold";
+  color: #333333;
+  letter-spacing: 3rpx;
+  margin-left: 24rpx;
+}
+.bottom-title-t2 {
+  font: 20rpx "PingFangSC-Regular";
+  color: #999999;
+  margin-left: 10rpx;
+}
+.table {
+  border: 0px solid #f1f1f1;
+  margin-bottom: 88rpx;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 76rpx;
+  align-items: center;
+  border-bottom: 1rpx rgba(151, 151, 151, 0.3) solid;
+}
+.td {
+  width: 40%;
+  justify-content: center;
+  text-align: center;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  color: #333333;
+}
+.bg-w {
+  /* background: snow; */
+  border-bottom: none;
+}
+/* .bg-g {
+          background: #e6f3f9;
+        } */
+.th {
+  width: 40%;
+  justify-content: center;
+  background: #f1f1f1;
+  display: flex;
+  height: 76rpx;
+  align-items: center;
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular;
+  color: #333333;
+}
+.footer {
+  width: 750rpx;
+  height: 88rpx;
+  background: #d84443;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font: 36rpx "PingFangSC-Regular";
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

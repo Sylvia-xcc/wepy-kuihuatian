@@ -1,0 +1,147 @@
+@import "./popup.wxss";
+/** less **/
+.cart-popup-container {
+  width: 100%;
+  background: #fff;
+  opacity: 0.8;
+}
+.cart-popup-container .cart-popup-con {
+  margin-left: 23rpx;
+}
+.cart-popup-container .cart-popup-con .cart-popup-top {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+  margin-right: 24rpx;
+  padding-bottom: 24rpx;
+  border-bottom: 2rpx #f5f5f5 solid;
+}
+.cart-popup-container .cart-popup-con .cart-popup-top .cart-popup-top-img {
+  width: 180rpx;
+  height: 180rpx;
+}
+.cart-popup-container .cart-popup-con .cart-popup-top .cart-popup-top-right {
+  margin-left: 28rpx;
+  display: flex;
+  flex-direction: column;
+  width: 491rpx;
+}
+.cart-popup-container .cart-popup-con .cart-popup-top .cart-popup-top-right .cart-popup-top-pricenew {
+  font-size: 40rpx;
+  color: #df2525;
+  margin-top: 20rpx;
+}
+.cart-popup-container .cart-popup-con .cart-popup-top .cart-popup-top-right .cart-popup-top-priceold {
+  font-size: 20rpx;
+  text-decoration: line-through;
+  color: #999999;
+  margin-left: 20rpx;
+}
+.cart-popup-container .cart-popup-con .cart-popup-top .cart-popup-top-right .stock {
+  font-size: 24rpx;
+  color: #999;
+}
+.cart-popup-container .cart-popup-con .cart-popup-date {
+  margin-top: 24rpx;
+  margin-right: 24rpx;
+  border-bottom: 2rpx #f5f5f5 solid;
+}
+.cart-popup-container .cart-popup-con .cart-popup-date .cart-popup-date-con {
+  margin-top: 18rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.cart-popup-container .cart-popup-con .cart-popup-date .cart-popup-date-con .cart-popup-item {
+  min-width: 146rpx;
+  height: 54rpx;
+  background: #f5f5f5;
+  margin-bottom: 24rpx;
+  margin-left: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20rpx;
+  font-size: 24rpx;
+  font-family: PingFang-SC-Regular;
+  font-weight: 400;
+  color: #333333;
+}
+.cart-popup-container .cart-popup-con .cart-popup-date .cart-popup-date-con .active {
+  background: #d11c16;
+  color: #ffffff;
+}
+.cart-popup-container .cart-popup-con .shu {
+  width: 100%;
+  margin-top: 100rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.cart-popup-container .cart-popup-con .shu .cun {
+  margin-bottom: 100rpx;
+  font-size: 30rpx;
+  padding-left: 20rpx;
+  width: 20%;
+  display: inline-block;
+}
+.cart-popup-container .cart-popup-con .shu .stepper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 12rpx;
+}
+.cart-popup-container .cart-popup-con .shu .stepper text {
+  width: 26px;
+  height: 25px;
+  text-align: center;
+  font-weight: 900;
+  color: #939393;
+  border-radius: 6rpx;
+  border: 1px solid #ccc;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+.cart-popup-container .cart-popup-con .shu .stepper .disabled {
+  background-color: #f5f5f9;
+  color: #ccc;
+}
+.cart-popup-container .cart-popup-con .shu .stepper .nownum {
+  width: 70px;
+  height: 25px;
+  text-align: center;
+  border-radius: 6rpx;
+  border: 1px solid #ccc;
+  color: #000;
+}
+.cart-popup-container .cart-popup-con .cart-popup-close {
+  width: 24rpx;
+  height: 23rpx;
+  position: absolute;
+  right: 24rpx;
+  top: 30rpx;
+}
+.cart-popup-container .cart-popup-btnsure {
+  width: 750rpx;
+  height: 90rpx;
+  background: #d11c16;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50rpx;
+  font-size: 30rpx;
+  font-family: PingFang-SC-Regular;
+  font-weight: 400;
+  color: #ffffff;
+}
+.fts24 {
+  font-size: 24rpx;
+  font-family: PingFang-SC-Regular;
+  font-weight: 400;
+  color: #333333;
+}
+.ftb24 {
+  font-size: 24rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: #333333;
+}

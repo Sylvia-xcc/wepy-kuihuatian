@@ -1,0 +1,76 @@
+{
+  "pages": [
+    "pages/home",
+    "pages/classify",
+    "pages/shop_cart",
+    "pages/info",
+    "pages/authorize",
+    "pages/goods_detail",
+    "pages/pay_now",
+    "pages/pay-cart",
+    "pages/pay-pintuan",
+    "pages/pay/pay-success",
+    "pages/pay/pay-fail",
+    "pages/my-purse",
+    "pages/chongzhi",
+    "pages/my-coupon",
+    "pages/my-pintuan",
+    "pages/use-coupon",
+    "pages/search",
+    "pages/student/student-list",
+    "pages/student/student-edit",
+    "pages/student/student-add",
+    "pages/student/student-select",
+    "pages/order-list",
+    "pages/order-detail",
+    "pages/order-admin",
+    "pages/my-collect",
+    "pages/course/course-list",
+    "pages/course/course-detail",
+    "pages/course/course-add",
+    "pages/friends/friends-list",
+    "pages/friends/friends-add",
+    "pages/home-list",
+    "pages/activity-list",
+    "pages/activity-detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FCFBFB",
+    "navigationBarTitleText": "葵花田艺术",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#CCCCCC",
+    "selectedColor": "#D11C16",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home",
+        "text": "首页",
+        "iconPath": "images/icon_home.png",
+        "selectedIconPath": "images/icon_home_active.png"
+      },
+      {
+        "pagePath": "pages/classify",
+        "text": "分类",
+        "iconPath": "images/icon_classify.png",
+        "selectedIconPath": "images/icon_classify_active.png"
+      },
+      {
+        "pagePath": "pages/shop_cart",
+        "text": "购物车",
+        "iconPath": "images/icon_cart.png",
+        "selectedIconPath": "images/icon_cart_active.png"
+      },
+      {
+        "pagePath": "pages/info",
+        "text": "我",
+        "iconPath": "images/icon_info.png",
+        "selectedIconPath": "images/icon_info_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap68.json"
+}

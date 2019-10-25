@@ -1,0 +1,55 @@
+@import "./../../components/common/uploadFile.wxss";
+/** less **/
+.textarea-con-con {
+  width: 750rpx;
+  background: #F6F6F6;
+  padding-bottom: 10rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  color: #6D6D6D;
+  font-size: 30rpx;
+  font-family: PingFangSC-Medium, PingFangSC;
+  line-height: 40rpx;
+  margin-bottom: 40rpx;
+}
+.textarea-con-con .textarea-li {
+  width: 700rpx;
+  min-height: 200rpx;
+  padding: 15rpx;
+  margin: 15rpx;
+}
+.tip-con {
+  font-size: 24rpx;
+  margin-left: 48rpx;
+  color: #6D6D6D;
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30rpx;
+}
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 100rpx;
+  margin-bottom: 50rpx;
+  padding: 50rpx;
+}
+.footer .btn {
+  width: 270rpx;
+  height: 80rpx;
+  background: #d2d2d2;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  text-align: center;
+  vertical-align: middle;
+}
+.footer .edit-btn {
+  color: #373737;
+}
+.footer .fabu-btn {
+  color: #FFFFFF;
+  background: linear-gradient(180deg, #0099ff 0%, #00c9ff 100%);
+}

@@ -1,0 +1,41 @@
+/** less **/
+.con {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.con image {
+  width: 610rpx;
+  height: 572rpx;
+  margin-top: 50rpx;
+}
+.pay-t1 {
+  font: bold 34rpx "PingFang-SC-Heavy";
+  color: rgba(0, 0, 0, 0.4);
+  margin-top: 21px;
+}
+.pay-t2 {
+  font: bold 24rpx "PingFang-SC-Bold";
+  color: #ee451f;
+  margin-top: 21rpx;
+}
+.pay-t2 .pay-rmb {
+  font: bold 18rpx "SanFranciscoDisplay-Bold";
+  color: rgba(238, 69, 31, 0.6);
+  margin: 0 13rpx;
+}
+.pay-t2 .pay-t3 {
+  font: bold 33rpx "SanFranciscoDisplay-Bold";
+  color: rgba(209, 28, 22, 0.9);
+}
+.btn {
+  width: 396rpx;
+  height: 76rpx;
+  background: #d11c16;
+  box-shadow: 0rpx 4rpx 10rpx 0rpx rgba(209, 28, 22, 0.45);
+  border-radius: 38rpx;
+  font: bold 26rpx "PingFang-SC-Bold";
+  color: #ffffff;
+  margin-top: 86rpx;
+}

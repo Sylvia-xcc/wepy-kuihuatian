@@ -1,0 +1,76 @@
+/** less **/
+.content-scroll {
+  width: 100%;
+  margin-top: 30rpx;
+  white-space: nowrap;
+  display: flex;
+}
+.content-scroll .item2 {
+  width: 300rpx;
+  height: 452rpx;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0rpx 8rpx 16rpx 0rpx rgba(0, 0, 0, 0.06);
+  border-radius: 12rpx;
+  margin-left: 24rpx;
+  display: inline-block;
+}
+.content-scroll .item2 .item-top {
+  position: relative;
+  height: 300rpx;
+}
+.content-scroll .item2 .item-top image {
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 12rpx 12rpx 0rpx 0rpx;
+}
+.content-scroll .item2 .item-top .item-time {
+  width: 300rpx;
+  height: 40rpx;
+  background: rgba(0, 0, 0, 0.3);
+  /* border-radius: 0rpx 0rpx 12rpx 12rpx; */
+  position: absolute;
+  bottom: 0rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 26rpx;
+}
+.content-scroll .item2 .item-top .item-time image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 15rpx;
+}
+.content-scroll .item2 .item-top .item-time text {
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular;
+  color: #ffffff;
+  white-space: nowrap;
+  margin-left: 4rpx;
+}
+.content-scroll .item2 .item-bottom {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+}
+.content-scroll .item2 .item-bottom .item-name {
+  width: 250rpx;
+  font: bold 26rpx "PingFangSC-Semibold";
+  color: #383838;
+  margin-top: 20rpx;
+  display: block;
+}
+.content-scroll .item2 .item-bottom .item-oldprice {
+  font: 20rpx "PingFangSC-Regular";
+  color: #999999;
+  text-decoration: line-through;
+  display: block;
+  margin-top: 10rpx;
+}
+.content-scroll .item2 .item-bottom .item-price {
+  font: 26rpx "PingFangSC-Regular";
+  color: #ff3b30;
+  display: block;
+  margin-top: 10rpx;
+}

@@ -1,0 +1,46 @@
+@import "./../components/htmlParser.wxss";
+/** less **/
+.con {
+  width: 702rpx;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 0rpx 12rpx 16rpx 0rpx rgba(0, 0, 0, 0.09);
+  border-radius: 12rpx;
+  margin: 22rpx 24rpx 66rpx 24rpx;
+}
+.con .item {
+  margin: 0rpx 24rpx;
+  border-bottom: 2rpx #EBEBEB solid;
+  position: relative;
+}
+.con .item .item-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  line-height: 44rpx;
+  margin-top: 40rpx;
+}
+.con .item .item-date,
+.con .item .item-time {
+  font-size: 28rpx;
+  line-height: 28rpx;
+  color: #777;
+  margin-top: 28rpx;
+}
+.con .item .item-time {
+  margin-bottom: 40rpx;
+}
+.con .item .item-btn {
+  width: 166rpx;
+  height: 56rpx;
+  background: linear-gradient(180deg, #0099ff 0%, #00c9ff 100%);
+  border-radius: 28rpx;
+  position: absolute;
+  right: 24rpx;
+  bottom: 28rpx;
+  color: #fff;
+  font-size: 28rpx;
+}
+.con .hr {
+  width: 100%;
+  height: 40rpx;
+}

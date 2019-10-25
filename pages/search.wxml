@@ -1,0 +1,63 @@
+
+    <view class="search">
+        <view class="search_kuang">
+            <view class="search-dian" style="left:50rpx; top:48rpx;"/>
+            <input class="search_input" placeholder="请输入您想搜索的内容" auto-focus="true" focus="{{focus}}" value="{{searchValue}}" bindinput="searchValueInput" bindconfirm="doSearch"/>
+            <view class="search_btn" bindtap="doSearch"/>
+            <image src="../images/search.png" class="search_icon"/>
+        </view>
+    </view>
+    <view class="search_no" style="text-align:center; margin-top:200rpx;"  wx:if="{{productData.length<=0&&!hotKeyShow}}">
+        <view class="font_14 center">
+            <image class="scimg" src="/images/search_no.png" style="width:232rpx;height:232rpx;"/>
+        </view>
+        <text style="font-size:26rpx;">没有找到您要的宝贝/(ㄒoㄒ)/~~</text>
+    </view>
+    <view class="cont"  wx:if="{{productData.length>0}}">
+        
+    <view class="nav-con"  wx:if="{{$classifycon$list.length>0}}">
+        <block wx:for="{{$classifycon$list}}" wx:key="wx:key">
+            <view class="item" data-id="{{item.id}}" bindtap="$classifycon$_goodTap">
+                <view class="item-top">
+                    <image src="{{item.thumb}}"/>
+                    <view class="item-time" wx:if="{{item.showTimer && item.timeTip!='' && item.stock>0}}">
+                        <image class="item-sj" src="/images/shijian.png"/>
+                        {{item.timeTip[0]}}:{{item.timeTip[1]}}:{{item.timeTip[2]}}:{{item.timeTip[3]}}
+                    </view>
+                    <block>
+                        <!-- 售空 -->
+                        <view class="item-mask" wx:if="{{item.stock<=0}}">
+                            <image src="/images/sk.png" class="item-mask-sk" mode="widthFix"/>
+                        </view>
+                        <!-- 秒杀1：活动结束 -->
+                        <view class="item-mask" wx:elif="{{item.showTimer && item.timeTip==''}}">
+                            <image src="/images/over.png" class="item-mask-over" mode="widthFix"/>
+                        </view>
+                    </block>
+                </view>
+                <view class="item-bottom">
+                    <text class="item-name showone">{{item.name}}</text>
+                    <text class="item-price">￥{{($classifycon$vip==0)?item.price_yh:item.price_vip}}</text>
+                    <text class="item-price-old">￥{{item.price}}</text>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view  wx:else class="nodata">
+        暂无数据
+    </view>
+
+    </view>
+    <!--加载更多时动画-->
+    
+    <view class="loadMoreGif"  wx:if="{{$bottomLoadMore$show}}">
+        <image src="../images/loadding.gif"/>
+        <text>{{$bottomLoadMore$message}}</text>
+    </view>
+
+
+    
+    <view class="loading"  wx:if="{{$loading$show}}">
+        <image src="../images/logining.gif"/>
+        <text>{{$loading$message}}</text>
+    </view>

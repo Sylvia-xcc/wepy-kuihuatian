@@ -1,0 +1,6 @@
+
+    <view class="con">
+        <image src="http://www.fengzhankeji.com/flower/images/pay-fail.png"/>
+        <text class="pay-t1">很遗憾本次支付失败～</text>
+        <view class="btn center" bindtap="goHome">返回首页</view>
+    </view>

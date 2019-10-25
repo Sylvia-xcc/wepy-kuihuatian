@@ -1,0 +1,113 @@
+
+    
+    <view class="con">
+        <view class="address" bindtap="$sureorder$addressTap">
+            <view  wx:if="{{$sureorder$studentInfo}}" class="hasaddress c2">
+                <view class="l1">
+                    <image class="dian c1" src="../images/sureorder/dian.png"/>
+                    <text class="t1 c1">学生姓名</text>
+                    <text class="addrname c1">{{$sureorder$studentInfo.name}}</text>
+                    <view class="tel">
+                        <image class="c1" src="../images/sureorder/phone.png" style="width:21rpx; height:29rpx"/>
+                        <text class="c1">{{$sureorder$studentInfo.parents_phone}}</text>
+                    </view>
+                </view>
+                <view class="l2">
+                    <image class="pos c1" src="../images/sureorder/pos.png"/>
+                    <text class="c1 showone">{{$sureorder$studentInfo.province}}{{$sureorder$studentInfo.city}}{{$sureorder$studentInfo.areas}}{{$sureorder$studentInfo.addr}}</text>
+                    <image class="c1 arrow" src="../images/right.png"/>
+                </view>
+            </view>
+            <view  wx:else class="noaddress">
+                <image class="pos c1" src="../images/sureorder/pos.png"/>
+                <text class="c1">点击去添加学生信息</text>
+            </view>
+        </view>
+        <!-- 订单商品 -->
+        <view class="goods">
+            <block wx:for="{{$sureorder$productData}}" wx:key="{{index}}">
+                <view class="item" data-id="{{item.id}}">
+                    <image class="item-img" src="{{item.thumb}}"/>
+                    <view class="item-cont">
+                        <text class="item_name showone">{{item.name}}</text>
+                        <text class="item_desc showtwo" wx:if="{{item.gg_name.length>0}}">选择：{{item.gg_name}}</text>
+                        <text class="rbm">RMB  <text class="item_price">{{item.price}}</text></text>
+                    </view>
+                    <view class="item-count quan">x{{item.num}}</view>
+                    <view class="nums" wx:if="{{$sureorder$buynow}}">
+                        <view class="cart-item-minus" bindtap="$sureorder$minusCount" data-index="{{index}}">-</view>
+                        <view class="cart-item-num">{{item.num}}</view>
+                        <view class="cart-item-add" bindtap="$sureorder$addCount" data-index="{{index}}">+</view>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <!-- 商品总价 -->
+        <view class="juan">
+            <image class="dian c1 c2" src="/images/sureorder/dian.png"/>
+            <view class="c1 font28">商品总价</view>
+            <text class="rbm2">RMB  <text class="fts24">{{$sureorder$totalPrice}}</text></text>
+        </view>
+        <!-- 优惠卷信息 -->
+        <!-- <view class='juan' bindtap='seejuanTap' wx:if="{{optype==0}}">
+                                    <image class='dian c1 c2' src='/images/sureorder/dian.png'></image>
+                                    <view class='c1 font28'>可用优惠劵</view>
+                                    <view class='juan_item c1 quan q2'>x{{coupon_list.length}}</view>
+                                    <image class='c1 arrow arrow2' src='/images/right.png'></image>
+                                </view> -->
+        <!-- 优惠劵满减 -->
+        <!-- <view class='juan' wx:if="{{optype==0}}">
+                                    <image class='dian c1 c2' src='/images/sureorder/dian.png'></image>
+                                    <view class='c1 font28'>优惠劵满减</view>
+                                    <text class='rbm2'>RMB  <text class='fts24'>{{juanPrice}}</text></text>
+                                </view> -->
+        <!-- 运费 -->
+        <!-- <view class='juan'>
+                                    <image class='dian c1 c2' src='/images/sureorder/dian.png'></image>
+                                    <view class='c1 font28'>配送方式</view>
+                                    <text class='rbm2' wx:if="{{fastPrice>0}}">RMB  <text class='fts24' >{{fastPrice}}</text></text>
+                                    <text class="rbm2 fts24" wx:else>免费包邮</text>
+                                </view> -->
+        <!--使用余额-->
+        <view class="juan">
+            <image class="dian c1 c2" src="/images/sureorder/dian.png"/>
+            <view class="c1 font28">余额支付
+                <text style="color:#00ff00;">({{$sureorder$money}})</text>
+            </view>
+            <switch style="position:absolute;right:20rpx;" checked="{{$sureorder$checkedCash}}" bindchange="$sureorder$switchPayType" wx:if="{{!($sureorder$buyType=='buypintuan')}}"/>
+        </view>
+        <!-- 备注 -->
+        <view class="beizhu">
+            <image class="dian c1 c2" src="/images/sureorder/dian.png"/>
+            <view class="c1 font28"> 备注</view>
+            <textarea class="beizhu-area" placeholder-class="beizhu-area-placeholder" bindinput="$sureorder$remarkInput" value="{{$sureorder$remark}}" placeholder="请用户填写备注留言"/>
+        </view>
+        <!-- 线下支付 -->
+        <block wx:if="{{!($sureorder$buyType=='buypintuan')}}">
+            <view class="payonline" wx:if="{{!$sureorder$checkedCash}}">
+                <view class="beizhu">
+                    <image class="dian c1 c2" src="/images/sureorder/dian.png"/>
+                    <view class="c1 font28"> 上传支付截图</view>
+                    <view class="paycont">
+                        <view class="pic-cont">
+                            <block wx:if="{{$sureorder$upload_pic.length<=0}}">
+                                <image src=" /images/pic.png " class="pic-img " bindtap="$sureorder$chooseImage">
+                                </image>
+                            </block>
+                            <block wx:else>
+                                <image src="{{$sureorder$upload_pic[0]}}" class="pic-img" bindtap="$sureorder$previewImgTap"/>
+                                <image src="/images/close2.png" class="pic-del" bindtap="$sureorder$deletePic"/>
+                            </block>
+                        </view>
+                        <button open-type="contact" class="wx_pay_submit" style="color:#fff;" send-message-title="付款提示" send-message-img="/images/kefu-img.jpg" show-message-card="true">获取付款二维码</button>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class="footer">
+        <text>实付</text>
+        <text class="rbm3">RMB  <text class="fts32">{{$sureorder$realPrice}}</text></text>
+        <view class="submit_btn" bindtap="$sureorder$submitTap">提交订单</view>
+        <!-- <button open-type='contact' class="submit_btn clearbtn" wx:if="{{!checkedCash}}" bindtap='submitTap'>联系客服</button> -->
+    </view>

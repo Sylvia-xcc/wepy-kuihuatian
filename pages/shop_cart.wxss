@@ -1,0 +1,248 @@
+/** less **/
+page {
+  background: #fcfbfb;
+}
+.cla {
+  font-family: '微软雅黑';
+  color: #ccc;
+}
+.pp {
+  text-align: center;
+  margin-top: 264rpx;
+}
+.select {
+  width: 30rpx;
+  height: 100%;
+  margin-left: 25rpx;
+  /* background: orange; */
+  display: flex;
+  align-items: center;
+}
+.select .selectok {
+  width: 27rpx;
+  height: 27rpx;
+  background: #d11c16;
+  border-radius: 50%;
+}
+.select .selectok .selectok-red {
+  width: 10rpx;
+  height: 10rpx;
+  background: #ffffff;
+  border-radius: 50%;
+  margin-left: 8rpx;
+  margin-top: 9rpx;
+}
+.select .selectcancel {
+  width: 27rpx;
+  height: 27rpx;
+  border: 2rpx solid #bfbfbf;
+  opacity: 0.5;
+  border-radius: 50%;
+}
+.cart-top {
+  width: 702rpx;
+  height: 99rpx;
+  background: #ffffff;
+  border-radius: 10px;
+  margin-left: 23rpx;
+  display: flex;
+  align-items: center;
+  /* background:orange; */
+}
+.cart-top .t1 {
+  font: bold 28rpx "PingFang-SC-Bold";
+  color: rgba(0, 0, 0, 0.4);
+  margin-left: 10rpx;
+  line-height: 99rpx;
+}
+.cart-top .t2 {
+  font: bold 34rpx "SanFranciscoDisplay-Bold";
+  color: rgba(209, 28, 22, 0.9);
+}
+.cart-top .t3 {
+  font: bold 28rpx "PingFang-SC-Bold";
+  color: rgba(0, 0, 0, 0.4);
+  margin-right: 24rpx;
+}
+.cart-top .t4 {
+  font: bold 28rpx "PingFang-SC-Bold";
+  color: rgba(0, 0, 0, 0.4);
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  line-height: 99rpx;
+  text-align: center;
+  flex: 1;
+}
+.cart-box {
+  width: 100%;
+  height: 900rpx;
+  top: 120rpx;
+}
+.cart-box .item {
+  width: 702rpx;
+  height: 196rpx;
+  background: #ffffff;
+  border-radius: 10rpx;
+  margin-left: 24rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  align-items: center;
+}
+.cart-box .item .detial {
+  width: 647rpx;
+  height: 100%;
+  position: relative;
+}
+.cart-box .item .detial .cart-thumb {
+  width: 148rpx;
+  height: 148rpx;
+  position: absolute;
+  margin-left: 20rpx;
+  margin-top: 24rpx;
+  display: block;
+}
+.cart-box .item .detial .cart-item-title {
+  font: bold 28rpx "PingFang-SC-Bold";
+  color: rgba(13, 13, 13, 0.7);
+  display: block;
+  margin-top: 34rpx;
+  margin-left: 197rpx;
+}
+.cart-box .item .detial .cart-item-desc {
+  font: 22rpx "PingFang-SC-Medium";
+  color: rgba(0, 0, 0, 0.4);
+  display: block;
+  margin-top: 13rpx;
+  margin-left: 197rpx;
+}
+.cart-box .item .detial .o1 {
+  width: 450rpx;
+  height: 26rpx;
+  position: absolute;
+  margin-left: 197rpx;
+  bottom: 30rpx;
+  line-height: 26rpx;
+  vertical-align: middle;
+}
+.cart-box .item .detial .o1 .RMB1 {
+  font: bold 18rpx "SanFranciscoDisplay-Bold";
+  color: #ee451f;
+  margin-right: 20rpx;
+}
+.cart-box .item .detial .o1 .cart-item-price {
+  font: bold 28rpx "SanFranciscoDisplay-Bold";
+  color: rgba(209, 28, 22, 0.9);
+}
+.cart-box .item .detial .cart-item-del {
+  width: 24rpx;
+  height: 23rpx;
+  position: absolute;
+  right: 25rpx;
+  top: 41rpx;
+}
+.cart-box .item .detial .nums {
+  position: absolute;
+  right: 24rpx;
+  bottom: 22rpx;
+}
+.cart-box .item .detial .nums .cart-item-minus {
+  width: 30rpx;
+  height: 30rpx;
+  background: rgba(209, 28, 22, 0.2);
+  border-radius: 50%;
+  font: 40rpx "Adobe Heiti Std R";
+  color: #d11c16;
+  line-height: 26rpx;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+}
+.cart-box .item .detial .nums .cart-item-num {
+  width: 62rpx;
+  height: 30rpx;
+  background: rgba(209, 28, 22, 0.2);
+  border-radius: 15px;
+  font: 26rpx "SanFranciscoDisplay-Semibold";
+  color: #d11c16;
+  line-height: 30rpx;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  margin: auto 8rpx;
+}
+.cart-box .item .detial .nums .cart-item-add {
+  width: 30rpx;
+  height: 30rpx;
+  background: rgba(209, 28, 22, 0.2);
+  border-radius: 50%;
+  font: 40rpx "PingFang-SC-Regular";
+  color: #d11c16;
+  line-height: 26rpx;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+}
+.cart-footer {
+  width: 100%;
+  height: 100rpx;
+  /* background: green; */
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+}
+.cart-footer .cart-footer-f {
+  width: 513rpx;
+  height: 100%;
+  /* background: orange; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.cart-footer .cart-footer-f .f1 {
+  font: bold 24rpx "PingFang-SC-Bold";
+  font-weight: bold;
+  color: #d11c16;
+}
+.cart-footer .cart-footer-f .f2 {
+  font: 18rpx "SanFranciscoDisplay-Regular";
+  color: #ee451f;
+  margin: 0rpx 20rpx;
+}
+.cart-footer .cart-footer-f .f3 {
+  font: bold 34rpx "SanFranciscoDisplay-Bold";
+  color: rgba(209, 28, 22, 0.9);
+  margin-right: 48rpx;
+}
+.cart-footer .cart-footer-f .jiesuan {
+  width: 187rpx;
+  height: 76rpx;
+  background: #d11c16;
+  box-shadow: 0rpx 4rpx 10rpx 0rpx rgba(238, 69, 31, 0.45);
+  border-radius: 38rpx;
+  font-size: bold 26rpx "PingFang-SC-Bold";
+  color: #ffffff;
+  line-height: 76rpx;
+  text-align: center;
+  vertical-align: middle;
+  position: absolute;
+  left: 513rpx;
+  top: 12rpx;
+}
+.cart-footer .s1 {
+  width: 187rpx;
+  height: 76rpx;
+  background: #d11c16;
+  box-shadow: 0rpx 4rpx 10rpx 0rpx rgba(238, 69, 31, 0.45);
+  border-radius: 38rpx;
+  font-size: bold 26rpx "PingFang-SC-Bold";
+  color: #ffffff;
+}
+.cart-footer .s2 {
+  width: 200rpx;
+  height: 76rpx;
+  background: #d11c16;
+  box-shadow: 0rpx 4rpx 10rpx 0rpx rgba(238, 69, 31, 0.45);
+  border-radius: 38rpx;
+  font-size: bold 26rpx "PingFang-SC-Bold";
+  color: #ffffff;
+}

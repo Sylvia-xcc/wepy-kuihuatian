@@ -1,0 +1,69 @@
+module.exports = {
+    text: 'This is from wxs',
+    filter: function (value) {
+        return Number(value);
+    },
+    // - 替换 .
+    replace: function (value) {
+        var res = value.toString().split('-');
+        // let str = value.replace(/\-/g,'.');
+        return res[0] + '.' + res[1] + '.' + res[2];
+    },
+    //朋友圈所有点赞名字组合
+    friendslikes: function (value) {
+        var list = value || [];
+        var res = '';
+        for (var i = 0; i < list.length; i++) {
+            res += list[i].user_name;
+            if (i < list.length - 1)
+                res += '，';
+        }
+        return res;
+    },
+    //该条朋友圈是否已经点赞
+    friendshavelike: function (list = [], id) {
+        for (var i = 0; i < list.length; i++) {
+            if (list[i].user_id == id)
+                return true;
+        }
+        return false;
+    },
+    friendsshowfold: function (value, len) {
+        return value.length >= len;
+    },
+    friendstimer: function (time) {
+        var tip = '';
+        var date = getDate();
+        var timestamp = date.getTime();
+        var startstamp = time * 1000;
+
+        var usedTime = Math.floor((timestamp - startstamp) / 1000); //两个时间戳相差的毫秒数  
+        var days = Math.floor(usedTime / (24 * 3600));
+        usedTime = usedTime % (24 * 3600);
+        var hours = Math.floor(usedTime / 3600);
+        usedTime = usedTime % 3600;
+        var minutes = Math.floor(usedTime / 60);
+        var second = Math.floor(usedTime % 60);
+        var mouth = Math.floor(days / 30);
+        var year = Math.floor(mouth / 12);
+        // console.log('===== timer ', timestamp, startstamp, usedTime, year, mouth, days, hours, minutes, second)
+        if (year > 0)
+            return year + '年前';
+        if (mouth > 0)
+            return mouth + '个月前';
+        if (days > 1)
+            return days + '天前';
+        if (hours > 0)
+            return hours + '小时前';
+        if (minutes > 0)
+            return minutes + '分钟前';
+        if (second > 0)
+            return second + '秒前'
+        return tip;
+    },
+    // 日期转换-2019-10-12 => 10月12日
+    filterDate:function(date) {
+        var res = date.split('-');
+        return res[1] + '月' + res[2] + '日';
+    }
+};

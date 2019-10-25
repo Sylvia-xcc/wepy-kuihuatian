@@ -1,0 +1,40 @@
+
+    
+    <view class="nav-con"  wx:if="{{$classifycon$list.length>0}}">
+        <block wx:for="{{$classifycon$list}}" wx:key="wx:key">
+            <view class="item" data-id="{{item.id}}" bindtap="$classifycon$_goodTap">
+                <view class="item-top">
+                    <image src="{{item.thumb}}"/>
+                    <view class="item-time" wx:if="{{item.showTimer && item.timeTip!='' && item.stock>0}}">
+                        <image class="item-sj" src="/images/shijian.png"/>
+                        {{item.timeTip[0]}}:{{item.timeTip[1]}}:{{item.timeTip[2]}}:{{item.timeTip[3]}}
+                    </view>
+                    <block>
+                        <!-- 售空 -->
+                        <view class="item-mask" wx:if="{{item.stock<=0}}">
+                            <image src="/images/sk.png" class="item-mask-sk" mode="widthFix"/>
+                        </view>
+                        <!-- 秒杀1：活动结束 -->
+                        <view class="item-mask" wx:elif="{{item.showTimer && item.timeTip==''}}">
+                            <image src="/images/over.png" class="item-mask-over" mode="widthFix"/>
+                        </view>
+                    </block>
+                </view>
+                <view class="item-bottom">
+                    <text class="item-name showone">{{item.name}}</text>
+                    <text class="item-price">￥{{($classifycon$vip==0)?item.price_yh:item.price_vip}}</text>
+                    <text class="item-price-old">￥{{item.price}}</text>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view  wx:else class="nodata">
+        暂无数据
+    </view>
+
+    <!--加载更多时动画-->
+    
+    <view class="loadMoreGif"  wx:if="{{$bottomLoadMore$show}}">
+        <image src="../images/loadding.gif"/>
+        <text>{{$bottomLoadMore$message}}</text>
+    </view>

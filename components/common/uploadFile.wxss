@@ -1,0 +1,29 @@
+/** less **/
+.image-warpper {
+  width: 750rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 24rpx;
+}
+.image-warpper .image-item {
+  width: 202rpx;
+  height: 202rpx;
+  margin-left: 24rpx;
+  margin-top: 24rpx;
+  position: relative;
+}
+.image-warpper .image-item image {
+  width: 100%;
+  height: 100%;
+}
+.image-warpper .image-item .image-del {
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+.image-warpper .video-item {
+  height: 450rpx;
+}

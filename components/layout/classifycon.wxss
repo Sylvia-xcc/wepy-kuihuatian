@@ -1,0 +1,133 @@
+/** less **/
+.layout-container {
+  width: 750rpx;
+  margin: 30rpx auto;
+  margin-bottom: 50rpx;
+}
+.layout-container .layout-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.layout-container .layout-title .title {
+  height: 25rpx;
+  margin-left: 24rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-bottom: 10rpx;
+}
+.layout-container .layout-title .title .title-t1 {
+  color: #333;
+  font: bold 26rpx "PingFang-SC-Bold";
+  height: 25rpx;
+  line-height: 25rpx;
+  letter-spacing: 3rpx;
+  margin-right: 20rpx;
+}
+.layout-container .layout-title .title .title-t2 {
+  color: #999;
+  font: 20rpx "SanFranciscoDisplay-Regular";
+  height: 25rpx;
+}
+.layout-container .layout-title .dian {
+  width: 33rpx;
+  height: 6rpx;
+  margin-right: 24rpx;
+}
+.item-mask {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12rpx 12rpx 0rpx 0rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item-mask .item-mask-sk {
+  width: 204rpx;
+  height: 204rpx;
+}
+.item-mask .item-mask-over {
+  width: 204rpx;
+  height: 180rpx;
+}
+.nav-con {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.nav-con .item {
+  width: 339rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  background: #fff;
+  box-shadow: 0rpx 8rpx 16rpx 0rpx rgba(0, 0, 0, 0.06);
+  border-radius: 12rpx 12rpx;
+  margin-left: 24rpx;
+}
+.nav-con .item .item-top {
+  width: 339rpx;
+  height: 400rpx;
+  position: relative;
+}
+.nav-con .item .item-top image {
+  width: 339rpx;
+  height: 400rpx;
+  border-radius: 12rpx 12rpx 0rpx 0rpx;
+}
+.nav-con .item .item-time {
+  width: 100%;
+  height: 48rpx;
+  background: rgba(0, 0, 0, 0.3);
+  /* border-radius: 12rpx 12rpx 0rpx 0rpx; */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font: 28rpx 'PingFangSC-Regular';
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.nav-con .item .item-time .item-sj {
+  width: 31rpx;
+  height: 31rpx;
+  margin: 0 20rpx 0 0;
+}
+.nav-con .item .item-bottom {
+  height: 100rpx;
+  margin-left: 5rpx;
+}
+.nav-con .item .item-bottom .item-name {
+  margin-top: 10rpx;
+  font: bold 26rpx 'PingFang-SC-Bold';
+  color: #333;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.nav-con .item .item-bottom .item-price {
+  height: 26rpx;
+  color: #d2221c;
+  font: 26rpx 'SanFranciscoDisplay-Regular';
+  margin-left: -2rpx;
+}
+.nav-con .item .item-bottom .item-price-old {
+  color: #62c8a5;
+  font: 18rpx 'SanFranciscoDisplay-Semibold';
+  margin-left: 12rpx;
+  text-decoration: line-through;
+}
+.nodata {
+  width: 100%;
+  text-align: center;
+  margin-top: 40rpx;
+}

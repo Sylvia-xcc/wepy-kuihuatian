@@ -1,0 +1,20 @@
+/** less **/
+.swiper image {
+  width: 100%;
+  height: auto;
+}
+.swiper {
+  position: relative;
+}
+.playBtn {
+  width: 96rpx;
+  height: 96rpx;
+  position: absolute;
+  left: 327rpx;
+  top: 200rpx;
+  z-index: 99999;
+}
+.playBtn .play-img {
+  width: 96rpx;
+  height: 96rpx;
+}

@@ -1,0 +1,92 @@
+
+    <view class="con">
+        <form bindsubmit="bindSave">
+            <view class="form-box">
+                <view class="row-wrap">
+                    <view class="label">学生姓名</view>
+                    <view class="label-right">
+                        <input class="input" name="studentName" type="text" placeholder="请输入学生真实姓名" value="{{name}}"/>
+                    </view>
+                </view>
+                <view class="row-wrap">
+                    <view class="label">性别</view>
+                    <picker mode="selector" bindchange="bindSexChange" range="{{sexArr}}" value="{{sexIndex}}" name="sex">
+                        <view class="picker">
+                            <text>{{sexArr[sexIndex]}}</text>
+                            <image src="/images/x_right.png" class="jt"/>
+                        </view>
+                    </picker>
+                </view>
+                <view class="row-wrap">
+                    <view class="label">出生日期</view>
+                    <picker mode="date" bindchange="bindDateChange" value="{{date}}" name="date">
+                        <view class="picker">
+                            <text>{{date}}</text>
+                            <image src="/images/x_right.png" class="jt"/>
+                        </view>
+                    </picker>
+                </view>
+                <view class="row-wrap">
+                    <view class="label">身份证号</view>
+                    <view class="label-right">
+                        <input class="input" name="IDCard" type="number" maxlength="18" placeholder="请输入身份证号码"/>
+                    </view>
+                </view>
+                <view class="row-wrap">
+                    <view class="label">家长手机号码</view>
+                    <view class="label-right">
+                        <input class="input" name="mobile" type="number" maxlength="11" placeholder="请输入手机号码"/>
+                    </view>
+                </view>
+                <view class="row-wrap">
+                    <view class="label">所在学校</view>
+                    <view class="label-right">
+                        <input class="input" name="schoolName" type="number" maxlength="50" placeholder="请输入学校名称"/>
+                    </view>
+                </view>
+                <view class="row-wrap">
+                    <view class="label">所在年级</view>
+                    <picker mode="selector" bindchange="bindGradeChange" range="{{gradeArr}}" value="{{gradeIndex}}" name="grade">
+                        <view class="picker">
+                            <text>{{gradeArr[gradeIndex]}}</text>
+                            <image src="/images/x_right.png" class="jt"/>
+                        </view>
+                    </picker>
+                </view>
+                <view class="row-wrap">
+                    <view class="label">所在地区</view>
+                    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" name="region">
+                        <view class="picker">
+                            <text>{{region}}</text>
+                            <image src="/images/x_right.png" class="jt"/>
+                        </view>
+                    </picker>
+                </view>
+                <view class="addr-details">
+                    <view class="label-right">
+                        <textarea name="address" auto-height placeholder="详细地址：如道路、门牌号、小区、楼栋号、单元室等"/>
+                    </view>
+                </view>
+                <view class="photo">
+                    <view class="label">上传学生照片</view>
+                    <view class="pic-cont">
+                        <block  wx:if="{{upload_pic.length<=0}}">
+                            <image src=" /images/jj.png " class="pic-img " bindtap="chooseImage">
+                            </image>
+                        </block>
+                        <block  wx:else>
+                            <image src="{{upload_pic[0]}}" class="pic-img" bindtap="previewImgTap"/>
+                            <image src="/images/close2.png" class="pic-del" bindtap="deletePic"/>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <!-- <view class='set-addr'>
+                        <view class='label-switch'>设为默认地址</view>
+                        <view class='label-switch-right'>
+                            <switch name="iswitch" checked="{{isDefalut==1?true:false}}"></switch>
+                        </view>
+                    </view> -->
+            <button type="warn" class="save-btn" formType="submit">保存</button>
+        </form>
+    </view>

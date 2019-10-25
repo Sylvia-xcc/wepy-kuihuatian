@@ -1,0 +1,366 @@
+/** less **/
+page {
+  width: 750rpx;
+  background: #fcfbfb;
+}
+.con {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 140rpx;
+}
+.c1 {
+  display: inline-block;
+  vertical-align: middle;
+}
+/* 收货地址 */
+.address {
+  width: 702rpx;
+  height: 129rpx;
+  background: #ffffff;
+  border: 1rpx solid #f1f4f9;
+  box-shadow: 0rpx 0rpx 20rpx 0rpx rgba(234, 234, 234, 0.75);
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.noaddress {
+  margin-left: 22rpx;
+}
+.pos {
+  width: 24rpx;
+  height: 28rpx;
+}
+.noaddress text {
+  font: 26rpx 'PingFang-SC-Regular';
+  color: rgba(0, 0, 0, 0.4);
+  margin-left: 10rpx;
+}
+.c2 {
+  margin-left: 22rpx;
+}
+.dian {
+  width: 29rpx;
+  height: 24rpx;
+}
+.l1 {
+  position: relative;
+}
+.t1 {
+  font: bold 28rpx 'PingFang-SC-Bold';
+  color: #000000;
+  margin-left: 11rpx;
+}
+.addrname {
+  font: bold 24rpx 'PingFang-SC-Bold';
+  color: rgba(0, 0, 0, 0.5);
+  margin-left: 23rpx;
+}
+.tel {
+  position: absolute;
+  right: 24rpx;
+  top: 0rpx;
+}
+.tel text {
+  font: bold 26rpx 'SanFranciscoDisplay-Bold';
+  color: rgba(0, 0, 0, 0.4);
+  margin-left: 10rpx;
+}
+.l2 text {
+  font: 26rpx 'PingFang-SC-Regular';
+  color: rgba(0, 0, 0, 0.4);
+  margin-left: 18rpx;
+  width: 560rpx;
+}
+.onenowarp {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.twonowarp {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.arrow {
+  width: 14rpx;
+  height: 24rpx;
+  margin-left: 40rpx;
+}
+/* 订单商品 */
+.goods {
+  width: 100%;
+  margin: 40rpx auto;
+}
+.item {
+  width: 702rpx;
+  height: 220rpx;
+  background: #ffffff;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-bottom: 20rpx;
+  margin-left: 24rpx;
+}
+.item-cont {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40rpx;
+  margin-top: 40rpx;
+}
+.item-img {
+  width: 220rpx;
+  height: 220rpx;
+}
+.item_name {
+  font: bold 32rpx 'PingFang-SC-Bold';
+  color: rgba(13, 13, 13, 0.7);
+  width: 400rpx;
+}
+.item_desc {
+  font: 22rpx 'PingFang-SC-Regular';
+  color: rgba(102, 102, 102, 0.4);
+  /* background: gray; */
+  margin-top: 10rpx;
+  width: 430rpx;
+}
+.rbm {
+  font: bold 22rpx 'SanFranciscoDisplay-Bold';
+  color: rgba(238, 69, 31, 0.6);
+  margin-top: 15rpx;
+}
+.item_price {
+  font: bold 26rpx 'SanFranciscoDisplay-Bold';
+  color: rgba(209, 28, 22, 0.9);
+  margin-left: 10rpx;
+}
+.quan {
+  width: 64rpx;
+  height: 29rpx;
+  background: rgba(209, 28, 22, 0.1);
+  border-radius: 15px;
+  font: 22rpx 'SanFranciscoDisplay-Regular';
+  color: #d11c16;
+  text-align: center;
+}
+.item-count {
+  position: absolute;
+  right: 53rpx;
+  top: 140rpx;
+}
+/* 优惠劵 */
+.juan {
+  width: 702rpx;
+  height: 74rpx;
+  background: #ffffff;
+  border-radius: 10rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+.font28 {
+  font: bold 28rpx 'PingFang-SC-Bold';
+  color: rgba(0, 0, 0, 0.8);
+  margin-left: 8rpx;
+  width: auto;
+}
+.rbm2 {
+  font: 18rpx 'SanFranciscoDisplay-Regular';
+  color: #ee451f;
+  margin-right: 10rpx;
+  position: absolute;
+  right: 20rpx;
+}
+.fts24 {
+  font-size: 24rpx;
+  margin-left: 5rpx;
+}
+.arrow2 {
+  position: absolute;
+  right: 20rpx;
+}
+.q2 {
+  position: absolute;
+  right: 56rpx;
+}
+/* 备注 */
+.beizhu {
+  width: 702rpx;
+  background: #ffffff;
+  border-radius: 10rpx;
+}
+.beizhu-area {
+  width: 630rpx;
+  font-size: 26rpx;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+  color: #666;
+  height: 160rpx;
+}
+.beizhu-area-placeholder {
+  font-size: 26rpx;
+}
+/* 提交 */
+.footer {
+  width: 750rpx;
+  height: 88rpx;
+  background: #ffffff;
+  box-shadow: 0rpx 0rpx 20rpx 0rpx rgba(234, 234, 234, 0.75);
+  position: fixed;
+  z-index: 999;
+  bottom: 0rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  font: bold 24rpx 'PingFang-SC-Bold';
+  color: #d11c16;
+}
+.submit_btn {
+  width: 212rpx;
+  height: 88rpx;
+  background: #d11c16;
+  font: bold 26rpx 'PingFang-SC-Bold';
+  color: #ffffff;
+  line-height: 88rpx;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+}
+.clearbtn {
+  border-radius: 0;
+  right: 0;
+  margin-right: 0rpx;
+  margin-left: 0rpx;
+}
+.rbm3 {
+  margin-right: 40rpx;
+  font: bold 18rpx 'SanFranciscoDisplay-Bold';
+  color: #ee451f;
+  margin-left: 40rpx;
+}
+.fts32 {
+  font: bold 32rpx SanFranciscoDisplay-Bold;
+  color: #d11c16;
+  margin-left: 5rpx;
+}
+.gou {
+  width: 606rpx;
+  height: 100rpx;
+  background: #d84443;
+  border-radius: 50rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 36rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+.modal image {
+  width: 400rpx;
+  height: 400rpx;
+}
+.clear {
+  clear: both;
+}
+/* 加减 */
+.nums {
+  position: absolute;
+  right: 24rpx;
+  bottom: 17rpx;
+}
+.cart-item-minus {
+  width: 30rpx;
+  height: 30rpx;
+  background: rgba(209, 28, 22, 0.2);
+  border-radius: 50%;
+  font: 40rpx 'Adobe Heiti Std R';
+  color: #d11c16;
+  line-height: 26rpx;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+}
+.cart-item-num {
+  width: 62rpx;
+  height: 30rpx;
+  background: rgba(209, 28, 22, 0.2);
+  border-radius: 15px;
+  font: 26rpx 'SanFranciscoDisplay-Semibold';
+  color: #d11c16;
+  line-height: 30rpx;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  margin: auto 8rpx;
+}
+.cart-item-add {
+  width: 30rpx;
+  height: 30rpx;
+  background: rgba(209, 28, 22, 0.2);
+  border-radius: 50%;
+  font: 40rpx 'PingFang-SC-Regular';
+  color: #d11c16;
+  line-height: 26rpx;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+}
+.payonline {
+  margin-top: 30rpx;
+}
+.payonline .pic-cont {
+  margin-left: 55rpx;
+  margin-top: 20rpx;
+  padding-bottom: 20rpx;
+  position: relative;
+  width: 200rpx;
+  height: 200rpx;
+}
+.payonline .pic-cont .pic-img {
+  width: 200rpx;
+  height: 200rpx;
+}
+.payonline .pic-cont .pic-del {
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  right: 5rpx;
+  top: 5rpx;
+}
+.payonline .paycont {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.payonline .wx_pay_submit {
+  background: #64a628;
+  width: 50%;
+}
+.payonline button[type='primary'] {
+  color: #fff;
+  background-color: #64a628;
+}
+.beizhu-txt {
+  margin-bottom: 40rpx;
+  width: 620rpx;
+  font-size: 26rpx;
+  margin-top: 20rpx;
+  margin-left: 55rpx;
+  color: #666;
+}
+.footer-status {
+  position: absolute;
+  left: 75rpx;
+  font-size: 28rpx;
+}

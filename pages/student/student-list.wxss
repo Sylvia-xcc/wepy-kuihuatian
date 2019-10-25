@@ -1,0 +1,96 @@
+/** less **/
+page {
+  background: #f5f5f5;
+}
+.con {
+  padding-bottom: 108rpx;
+}
+.item {
+  width: 750rpx;
+  height: 278rpx;
+  margin-bottom: 20rpx;
+  background: #fff;
+}
+.item .item-top {
+  height: 176rpx;
+  border-bottom: 2rpx solid #d6d6d6;
+  display: flex;
+  flex-direction: row;
+}
+.item .item-top .item-img {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 12rpx;
+  margin-top: 24rpx;
+  margin-left: 20rpx;
+}
+.item .item-top .item-top-right {
+  margin-top: 24rpx;
+  margin-left: 32rpx;
+  height: 128rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.item .item-top .item-top-right .item-name {
+  height: 44rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular, PingFangSC;
+  color: #202020;
+  line-height: 44rpx;
+}
+.item .item-top .item-top-right .item-decs {
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFangSC;
+  color: #202020;
+  line-height: 34rpx;
+}
+.item .item-bottom {
+  position: relative;
+}
+.item .item-bottom .item-moren {
+  position: absolute;
+  left: 20rpx;
+  top: 30rpx;
+}
+.item .item-bottom .item-btn {
+  width: 132rpx;
+  height: 60rpx;
+  border-radius: 8rpx;
+  border: 2rpx solid #666666;
+  font: 28rpx 'PingFangSC-Regular';
+  color: #666666;
+  line-height: 60rpx;
+  text-align: center;
+  vertical-align: middle;
+}
+.item .item-bottom .item-del {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+}
+.item .item-bottom .item-edit {
+  position: absolute;
+  top: 20rpx;
+  right: 172rpx;
+}
+.no {
+  color: #333;
+  text-align: center;
+  height: 1000rpx;
+  line-height: 1000rpx;
+  vertical-align: middle;
+}
+.add-info {
+  width: 750rpx;
+  height: 88rpx;
+  background: #d11c16;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: bold 32rpx PingFang-SC-Bold;
+  color: #ffffff;
+}

@@ -1,0 +1,89 @@
+
+    <view>
+        <!-- 个人信息 -->
+        <view class="con">
+            <view class="userinfo">
+                <block  wx:if="{{userInfo==null}}">
+                    <image class="userinfo-avatar" src="/images/head-icon.png" background-size="cover" style="border:none;"/>
+                    <view class="loginbtn" bindtap="loginTap">登录</view>
+                </block>
+                <block  wx:else>
+                    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"/>
+                    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+                    <!-- <text class="userinfo-nickinfo" style='display:none'>将平凡的事情做好就是不平凡</text> -->
+                </block>
+            </view>
+            <!-- 个人钱财 -->
+            <view class="usermotto">
+                <view class="usermotto-item" data-type="0" bindtap="jumppageTap">
+                    <image src="/images/self/t1.png"/>
+                    <text>我的钱包</text>
+                </view>
+                <view class="usermotto-item" data-type="1" bindtap="jumppageTap">
+                    <image src="/images/self/t2.png"/>
+                    <text>课程表</text>
+                </view>
+                <view class="usermotto-item" data-type="2" bindtap="jumppageTap">
+                    <image src="/images/self/t3.png"/>
+                    <text>我的拼团</text>
+                </view>
+                <view class="usermotto-item" data-type="3" bindtap="jumppageTap">
+                    <image src="/images/self/t4.png"/>
+                    <text>充值</text>
+                </view>
+            </view>
+        </view>
+        <!-- 订单部分 -->
+        <view class="order">
+            <view class="myorder" data-current="0" bindtap="orderlistTap">
+                <view class="dian"/>
+                <text class="o1">我的订单</text>
+                <text class="o2">查看所有订单</text>
+                <text class="o3">订单详情都在这里呢</text>
+                <image src="/images/x_right.png" class="o4"/>
+            </view>
+            <view class="orderlist">
+                <view data-current="1" bindtap="orderlistTap">
+                    <image src="/images/self/img1.png"/>
+                    <text>待付款</text>
+                </view>
+                <view data-current="3" bindtap="orderlistTap">
+                    <image src="/images/self/img2.png"/>
+                    <text>待确认</text>
+                </view>
+                <view data-current="2" bindtap="orderlistTap">
+                    <image src="/images/self/img3.png" style="width:62rpx;"/>
+                    <text>已完成</text>
+                </view>
+            </view>
+        </view>
+        <!-- 信息部分 -->
+        <view class="infoinfo">
+            <navigator class="ol" url="/pages/friends/friends-list">
+                <view class="dian2"/>
+                <text>点评圈</text>
+            </navigator>
+            <navigator class="ol" url="/pages/student/student-list">
+                <view class="dian2"/>
+                <text>我的学生信息</text>
+            </navigator>
+            <!-- <view class='ol' bindtap='myJuanTap'> -->
+            <!-- <navigator class='ol' url="/pages/my-coupon">
+                            <view class='dian2'></view>
+                            <text>我的优惠劵</text>
+                        </navigator> -->
+            <navigator class="ol" url="/pages/my-collect">
+                <view class="dian2"/>
+                <text>我的收藏</text>
+            </navigator>
+            <!-- </view> -->
+            <navigator class="ol" url="/pages/order-admin" wx:if="{{userInfo.is_admin==1}}">
+                <view class="dian2"/>
+                <text>订单管理</text>
+            </navigator>
+            <!-- <navigator class='ol' url="/pages/activity-list">
+                <view class='dian2'></view>
+                <text>活动</text>
+            </navigator> -->
+        </view>
+    </view>

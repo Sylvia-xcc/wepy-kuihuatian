@@ -1,0 +1,9 @@
+
+    <view class="con center" style="height:{{windwH}}px;">
+        <image src="{{login_background}}" class="login-img-bg" animation="{{animationData}}"/>
+        <view class="login-con">
+            <image src="{{login_img}}" class="login-tx"/>
+            <image src="{{login_name}}" class="hua"/>
+            <button class="login-btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGetUserInfo">直接登陆</button>
+        </view>
+    </view>

@@ -1,0 +1,18 @@
+
+    <view class="con">
+        <view class="item">
+            <view class="item-title">{{obj.title}}</view>
+            <view class="item-date">日期：{{obj.date}}</view>
+            <view class="item-time">时间：{{obj.start_time}}-{{obj.end_time}}</view>
+            <view class="item-btn center" bindtap="gotoTap">点击进入</view>
+        </view>
+        <view class="hr"/>
+        <view style="width:654rpx; margin-left:24rpx; margin-bottom:20rpx;">
+            
+  <import src="../plugins/wxParse/wxParse.wxml"/>
+  <block  wx:for="{{$htmlParser$htmlParserTpl.nodes}}" wx:key="{{index}}">
+    <template is="wxParse0" data="{{item}}"/>
+  </block>
+
+        </view>
+    </view>

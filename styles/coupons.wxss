@@ -1,0 +1,90 @@
+.cont {
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+}
+.item {
+  width: 700rpx;
+  height: 256rpx;
+  margin-left: 25rpx;
+  margin-bottom: 26rpx;
+  position: relative;
+}
+.item image {
+  width: 700rpx;
+  height: 256rpx;
+}
+.item-left {
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+}
+.item-right {
+  position: absolute;
+  left: 460rpx;
+  top: 0rpx;
+  width: 240rpx;
+}
+.item-money {
+  font-size: 55rpx;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  width: 460rpx;
+  margin-top: 60rpx;
+}
+.item-tianjian {
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #ff4026;
+  width: 460rpx;
+  text-align: center;
+  position: absolute;
+  top: 165rpx;
+}
+.item-time {
+  font: 20rpx "PingFangSC-Semibold";
+  color: #ffffff;
+  width: 240rpx;
+  height: 30rpx;
+  margin-top: 55rpx;
+}
+.item-btn {
+  font: bold 28rpx "PingFangSC-Semibold";
+  color: #ff2847;
+  width: 100%;
+  height: 60rpx;
+  /* margin-top: 10rpx; */
+  position: absolute;
+  top: 142rpx;
+}
+.item-use {
+  font-size: 28rpx;
+  color: #fff;
+  margin-top: 10rpx;
+}
+.liqu {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 100rpx;
+  width: 100%;
+}
+.yijian_lq {
+  width: 40%;
+  margin-left: 30%;
+  padding: 20rpx;
+  background-color: #d84443;
+  color: white;
+  font-size: 30rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  margin-top: 100rpx;
+  margin-bottom: 10%;
+}
+.no {
+  text-align: center;
+  line-height: 100%;
+  margin-top: 48%;
+  color: #999;
+}

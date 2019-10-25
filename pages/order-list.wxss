@@ -1,0 +1,206 @@
+@import "./../components/pay-popup.wxss";
+@import "./../components/common/bottomLoadMore.wxss";
+/** less **/
+page {
+  background: #fcfbfb;
+}
+.tab {
+  width: 702rpx;
+  height: 77rpx;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  line-height: 77rpx;
+  margin-left: 24rpx;
+  background: #fff;
+  border-radius: 10px;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-around;
+}
+.tab .tab-list {
+  font: bold 30rpx "PingFang-SC-Bold";
+  color: #999999;
+  display: inline-block;
+  width: 16.3%;
+  height: 54rpx;
+  margin: auto 10rpx;
+}
+.tab .active {
+  color: #d11c16;
+  border-bottom: 2rpx solid #e18381;
+}
+.con {
+  width: 100%;
+  /* height: 600rpx;
+                                          background: green; */
+  margin-top: 130rpx;
+}
+.item {
+  width: 702rpx;
+  background: #ffffff;
+  border-radius: 10px;
+  margin-left: 24rpx;
+  margin-bottom: 31rpx;
+  position: relative;
+  /* background: orange; */
+}
+.item-padding {
+  padding-bottom: 60rpx;
+}
+.item-title {
+  padding-left: 24rpx;
+  padding-top: 20rpx;
+  font: bold 28rpx "PingFang-SC-Medium";
+  color: #999999;
+}
+.item-top {
+  width: 100%;
+}
+.item-bottom {
+  width: 100%;
+  height: 80rpx;
+  /* background: green; */
+  position: relative;
+  margin-top: 12rpx;
+}
+.item-icon {
+  width: 100%;
+  height: 210rpx;
+  /* background: salmon; */
+  margin-bottom: 10rpx;
+  position: relative;
+}
+.item image {
+  width: 206rpx;
+  height: 198rpx;
+  margin-left: 12rpx;
+  margin-top: 8rpx;
+}
+.item-name {
+  font: bold 28rpx "PingFang-SC-Bold";
+  color: #666666;
+  /* background: saddlebrown; */
+  display: block;
+  position: absolute;
+  left: 240rpx;
+  top: 39rpx;
+}
+.item-buff {
+  font: 20rpx "PingFang-SC-Bold";
+  color: #999;
+  width: 370rpx;
+  position: absolute;
+  left: 240rpx;
+  top: 96rpx;
+  display: flex;
+  flex-direction: row;
+}
+.item-count {
+  width: 64rpx;
+  height: 29rpx;
+  background: rgba(238, 69, 31, 0.2);
+  border-radius: 15rpx;
+  font: 22rpx "SanFranciscoDisplay-Semibold";
+  color: #d11c16;
+  line-height: 29rpx;
+  vertical-align: middle;
+  text-align: center;
+  position: absolute;
+  right: 23rpx;
+  top: 39rpx;
+}
+.item-price-con {
+  /* background: green; */
+  width: 450rpx;
+  height: 26rpx;
+  position: absolute;
+  left: 240rpx;
+  top: 135rpx;
+  line-height: 26rpx;
+  vertical-align: middle;
+}
+.RMB1 {
+  font: bold 18rpx "SanFranciscoDisplay-Bold";
+  color: #ee451f;
+  margin-right: 20rpx;
+}
+.item-price {
+  font: bold 28rpx "SanFranciscoDisplay-Bold";
+  color: rgba(209, 28, 22, 0.9);
+}
+.item-state {
+  font: bold 22rpx "PingFang-SC-Bold";
+  color: #ee451f;
+  position: absolute;
+  right: 24rpx;
+  top: 24rpx;
+}
+.item-info {
+  width: 100%;
+  height: 60rpx;
+  /* background: salmon; */
+  text-align: right;
+  margin-top: 10rpx;
+}
+.item-num {
+  font: 22rpx "PingFang-SC-Medium";
+  color: #000000;
+  opacity: 0.4;
+  margin-left: 10rpx;
+}
+.RMB2 {
+  font: bold 18rpx "SanFranciscoDisplay-Bold";
+  color: rgba(238, 69, 31, 0.6);
+  margin-right: 20rpx;
+}
+.item-price2 {
+  font: bold 34rpx "SanFranciscoDisplay-Bold";
+  color: rgba(209, 28, 22, 0.9);
+  margin-right: 24rpx;
+}
+.dian {
+  width: 10rpx;
+  height: 5rpx;
+  background: #9de273;
+  box-shadow: 0rpx 4rpx 10rpx 0rpx rgba(157, 226, 115, 0.56);
+  border-radius: 3rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.item-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  /* background: orange; */
+  margin-top: 12rpx;
+  align-items: center;
+}
+.item-btn {
+  width: 151rpx;
+  height: 54rpx;
+  background: rgba(98, 200, 165, 0.2);
+  border-radius: 27rpx;
+  font: 24rpx "PingFang-SC-Regular";
+  color: #ee451f;
+  margin-right: 24rpx;
+}
+.clearbtn {
+  position: absolute;
+  right: 10rpx;
+  opacity: 0;
+}
+.nodata image {
+  width: 160rpx;
+  height: 173rpx;
+  display: block;
+  margin-left: 294rpx;
+  margin-top: 420rpx;
+}
+.nodata text {
+  font: 28rpx "PingFang-SC-Regular";
+  color: #ee451f;
+  margin-left: 292rpx;
+}

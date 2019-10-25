@@ -1,0 +1,85 @@
+/** less **/
+.con {
+  position: relative;
+  overflow: hidden;
+}
+.login-img-bg {
+  width: 100%;
+  height: 110%;
+}
+.login-bg {
+  width: 100%;
+  height: 110%;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.login-con {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login-con .login-tx {
+  width: 280rpx;
+  height: 280rpx;
+  border-radius: 50%;
+  margin-bottom: 20rpx;
+}
+.login-title {
+  font: 80rpx 'DFKaiShu-SB-Estd-BF';
+  color: #ffffff;
+}
+.login-code-con {
+  position: relative;
+  margin-top: 116rpx;
+}
+.login-code {
+  width: 568rpx;
+  height: 94rpx;
+  border-radius: 12rpx;
+  border: 4rpx solid #ffffff;
+  font: 44rpx 'PingFangSC-Medium;';
+  color: #ffffff;
+  text-align: center;
+}
+.place-hoder {
+  font: 44rpx 'PingFangSC-Medium';
+  color: #ffffff;
+  /* margin-left: 174rpx; */
+}
+.login-img-code {
+  width: 44rpx;
+  height: 44rpx;
+  position: absolute;
+  left: 26rpx;
+  top: 24rpx;
+}
+.login-btn {
+  width: 568rpx;
+  height: 94rpx;
+  background: #ffffff;
+  border-radius: 12rpx;
+  font: bold 44rpx 'PingFangSC-Medium';
+  color: #5d5d5d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.jiao {
+  background: #bd2d30;
+  color: white;
+  font-weight: 100;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin-bottom: -20rpx;
+}
+.hua {
+  width: 468rpx;
+  height: 108rpx;
+}

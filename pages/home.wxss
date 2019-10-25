@@ -1,0 +1,18 @@
+@import "./../components/bomb_screen.wxss";
+@import "./../components/common/loading.wxss";
+@import "./../components/layout/layout-scroll.wxss";
+@import "./../components/layout/layout-three.wxss";
+@import "./../components/layout/layout-two.wxss";
+@import "./../components/layout/layout-one.wxss";
+/** less **/
+page {
+  width: 750rpx;
+  background: #fcfbfb;
+}
+.swiper {
+  width: 750rpx;
+}
+.slide-image {
+  width: 100%;
+  height: 100%;
+}

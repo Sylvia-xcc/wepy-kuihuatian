@@ -1,0 +1,14 @@
+/** less **/
+.item-wrapper {
+  width: 600rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+}
+.item-wrapper image {
+  width: 192rpx;
+  height: 192rpx;
+  margin-bottom: 8rpx;
+  margin-right: 8rpx;
+}

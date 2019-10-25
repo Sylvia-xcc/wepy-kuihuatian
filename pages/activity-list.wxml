@@ -1,0 +1,18 @@
+
+    <block  wx:for="{{list}}" wx:key="index">
+        <view class="item layout-row">
+            <image src="{{item.thumb}}"/>
+            <view>
+                <view class="item-title showone">{{item.title}}</view>
+                <view class="item-date">日期：{{item.date}}</view>
+                <view class="item-time">时间：{{item.start_time}}-{{item.end_time}}</view>
+            </view>
+            <navigator class="item-btn center" url="/pages/activity-detail?aid={{item.id}}">查看</navigator>
+        </view>
+    </block>
+    <!--加载更多时动画-->
+    
+    <view class="loadMoreGif"  wx:if="{{$bottomLoadMore$show}}">
+        <image src="../images/loadding.gif"/>
+        <text>{{$bottomLoadMore$message}}</text>
+    </view>

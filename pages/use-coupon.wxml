@@ -1,0 +1,23 @@
+
+    <view class="cont"  wx:if="{{juanlist.length>0}}">
+        <block wx:for="{{juanlist}}" wx:key="{{index}}">
+            <view class="item" data-ins="{{item.id}}" bindtap="useCouponTap">
+                <image src="/images/juan.png"/>
+                <view class="item-left">
+                    <view class="item-money">{{item.reduce_money}}优惠劵</view>
+                    <view class="item-tianjian">
+                        <block wx:if="{{item.coupon_type ==1}}">满{{item.full_money}}可用 </block>
+                        <block wx:else>无门槛</block>
+                    </view>
+                </view>
+                <view class="item-right">
+                    <view class="item-time center">{{m1.getTimer(item.start_time, item.end_time)}}</view>
+                    <view class="item-use center">{{item.name}}</view>
+                    <view class="item-btn center">立即使用</view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view  wx:else class="no">
+        暂无可用优惠劵
+    </view>

@@ -1,0 +1,124 @@
+
+    <view class="con">
+        <view class="top">
+            <image src="/images/bg.png" class="top-bg-img"/>
+            <!-- <image src="/images/head-icon.png" class="top-img"/> -->
+            <!-- <text class="top-txt">1111111</text> -->
+            <open-data type="userAvatarUrl" class="top-head-img"/>
+            <open-data type="userNickName" class="top-name"/>
+        </view>
+        <scroll-view scroll-y style="margin-top:88rpx;">
+            <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+                <wxs src="../../wxs/mywxs.wxs" module="m1"/>
+
+    <view class="item layout-row" data-datas="{{item}}" bindtap="$friendsItem$itemTap" data-com-index="{{index}}">
+        <!-- 头像 -->
+        <image src="{{item.user_photo}}" class="item-head-img"/>
+        <view class="right layout-col">
+            <!-- 昵称 -->
+            <text class="item-name">{{item.user_name}}</text>
+            <!-- 内容 -->
+            <view class="item-content {{item.fold?'item-content-fold':'item-content-extend'}}">{{item.text}}</view>
+            <view class="item-content-btn " data-datas="{{item}}" catchtap="$friendsItem$foldTap"  wx:if="{{item.showfold}}" data-com-index="{{index}}">{{item.fold?'展开':'收起'}}</view>
+            <!-- 上传图片 -->
+            <block  wx:if="{{item.type==0}}">
+                <view class="item-wrapper" wx:if="{{item.content.length>0}}">
+                    <block wx:key="$friendsItem$key" wx:for="{{item.content}}" wx:for-index="$friendsItem$index" wx:for-item="$friendsItem$item">
+                        <image src="{{$friendsItem$item}}" data-id="{{$friendsItem$index}}" data-dataimg="{{item}}" catchtap="$friendsItem$previewImgTap" data-com-index="{{index}}"/>
+                    </block>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="video-warapper" wx:for="{{item.content}}" wx:key="index">
+                    <video src="{{item}}"/>
+                </view>
+            </block>
+            <view class="item-time layout-row">
+                <view class="layout-row">
+                    <!-- 显示发布时间 -->
+                    <text class="item-time-t1">{{m1.friendstimer(item.create_time)}}</text>
+                    <view wx:if="{{item.user_id==userInfo.id}}" class="item-del" data-datas="{{item}}" catchtap="$friendsItem$delItem" data-com-index="{{index}}">删除</view>
+                </view>
+                <!--显示操作小图标-->
+                <image src="/images/d1.png" class="item-time-img" data-datas="{{item}}" catchtap="$friendsItem$caozuoTap" data-com-index="{{index}}"/>
+                <!--点赞评论标签-->
+                <view class="item-caozuo {{(item.showModal)?'active':''}}">
+                    <block wx:if="{{m1.friendshavelike(item.like_list, userInfo.id)}}">
+                        <view class="layout-row center">
+                            <image src="/images/d3.png" class="dianzan" data-tid="{{item.trend_id}}" data-type="1" catchtapp="$friendsItem$dianzanTap" data-com-index="{{index}}"/>
+                            <text class="dianzan-txt" data-tid="{{item.trend_id}}" data-type="1" catchtap="$friendsItem$dianzanTap" data-com-index="{{index}}">取消</text>
+                        </view>
+                    </block>
+                    <block wx:else>
+                        <view class="layout-row center">
+                            <image src="/images/d3.png" class="dianzan" data-tid="{{item.trend_id}}" data-type="0" catchtap="$friendsItem$dianzanTap" data-com-index="{{index}}"/>
+                            <text class="dianzan-txt" data-tid="{{item.trend_id}}" data-type="0" catchtap="$friendsItem$dianzanTap" data-com-index="{{index}}">点赞</text>
+                        </view>
+                    </block>
+                    <view class="layout-row center">
+                        <image src="/images/d2.png" class="pinglun" data-tid="{{item.trend_id}}" catchtap="$friendsItem$pinglunTap" data-com-index="{{index}}"/>
+                        <text class="pinglun-txt" data-tid="{{item.trend_id}}" catchtap="$friendsItem$pinglunTap" data-com-index="{{index}}">评论</text>
+                    </view>
+                </view>
+            </view>
+            <!-- 点赞 -->
+            <view class="item-zan layout-row {{(item.like_list.length>0&& item.comment_list.length>0)?'showbottom':''}}" wx:if="{{item.like_list.length>0}}">
+                <image src="/images/heart.png" class="item-zan-img"/>
+                <view class="item-zan-txt">{{m1.friendslikes(item.like_list)}}</view>
+            </view>
+            <!-- 评论 -->
+            <view class="item-comment" wx:if="{{item.comment_list.length>0}}">
+                <block wx:for="{{item.comment_list}}" wx:for-index="kk" wx:key="index" wx:for-item="item">
+                    <view class="pinglun-one" hover-class="pinglun-one-hover" hover-stay-time="150" data-comment="{{item}}" catchtap="$friendsItem$commentTap" data-com-index="{{index}}">
+                        <text class="pinglun-nickname">{{item.user_name}}：</text>
+                        <text class="pinglun-content">{{item.content}}</text>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+
+            </block>
+        </scroll-view>
+        <image src="/images/j2.png" class="fabu-btn"  wx:if="{{level>=2}}" bindtap="fabuTap"/>
+        <!-- 文本框 -->
+        
+    <view bindtap="$popup$toggleModal" class="pop-mask {{$popup$showModal?'active':''}}">
+    </view>
+    <view class="pop-content {{$popup$showModal?'active':''}}">
+        
+            <view class="textarea-con">
+                <textarea class="textarea-li" placeholder="评论" auto-height="{{true}}" maxlength="99999" value="{{comment}}" fixed="{{true}}" bindinput="bindinput">
+                                                                </textarea>
+                <view class="textarea-btn }}" bindtap="submitTap">提交</view>
+            </view>
+        
+    </view>
+
+        <!-- 删除评论选择 -->
+        
+    
+    <view bindtap="$wepyPopDelete$popup$toggleModal" class="pop-mask {{$wepyPopDelete$popup$showModal?'active':''}}">
+    </view>
+    <view class="pop-content {{$wepyPopDelete$popup$showModal?'active':''}}">
+        
+        <view class="del-con">
+            <text class="btn del-title">{{$wepyPopDelete$title}}</text>
+            <view class="btn del-btn" bindtap="$wepyPopDelete$delTap">删除</view>
+            <view class="btn cancel-btn" bindtap="$wepyPopDelete$cancelTap">取消</view>
+        </view>
+    
+    </view>
+
+
+        <!--加载更多时动画-->
+        
+    <view class="loadMoreGif"  wx:if="{{$bottomLoadMore$show}}">
+        <image src="../../images/loadding.gif"/>
+        <text>{{$bottomLoadMore$message}}</text>
+    </view>
+
+    </view>
+
+    <view>
+    </view>

@@ -1,0 +1,95 @@
+
+    <view>
+        <!-- tab -->
+        <view class="tab">
+            <view class="tab-list {{currentTab==0?'active':''}}" data-current="0" bindtap="tabTap">全部</view>
+            <view class="tab-list {{currentTab==1?'active':''}}" data-current="1" bindtap="tabTap">待付款</view>
+            <view class="tab-list {{currentTab==3?'active':''}}" data-current="3" bindtap="tabTap">待确认</view>
+            <view class="tab-list {{currentTab==2?'active':''}}" data-current="2" bindtap="tabTap">已完成</view>
+        </view>
+        <!-- 内容 -->
+        <view class="con">
+            <view  wx:if="{{orderlist.length>0}}">
+                <block wx:for="{{orderlist}}" wx:key="index">
+                    <view class="item {{item.status==30?'item-padding':''}}">
+                        <text class="item-state">{{item.status==20?'交易完成':item.desc}}</text>
+                        <view class="item-title">订单号：{{item.order_sn}}</view>
+                        <view class="item-top">
+                            <block wx:for="{{item.product}}" wx:for-item="icon" wx:key="{{id}}">
+                                <view class="item-icon" data-pid="{{icon.pro_id}}" data-oId="{{item.id}}" bindtap="detailTap">
+                                    <image src="{{icon.pro_thumb}}"/>
+                                    <text class="item-name">{{icon.pro_name}}</text>
+                                    <view class="item-count">x{{icon.pro_num}}</view>
+                                    <view class="item-buff showone" wx:if="{{icon.pro_buff.length>0}}">
+                                        选择：
+                                        <block wx:for="{{icon.pro_buff}}" wx:key="{{index}}">
+                                            {{icon.pro_buff[index]}}{{(index>=icon.pro_buff.length-1)?'':', '}}
+                                        </block>
+                                    </view>
+                                    <view class="item-price-con">
+                                        <text class="RMB1">RMB</text>
+                                        <text class="item-price">{{icon.pro_price}}</text>
+                                    </view>
+                                </view>
+                            </block>
+                        </view>
+                        <view class="item-info">
+                            <view class="dian"/>
+                            <text class="item-num">共{{item.product.length}}件商品合计(不含运费)：</text>
+                            <text class="RMB2">RMB</text>
+                            <text class="item-price2">{{item.amount}}</text>
+                        </view>
+                        <view class="item-bottom" wx:if="{{(item.status == 10 || item.status==30 || item.status == 0)?true:false}}">
+                            <!-- 1：待付款 -->
+                            <view wx:if="{{item.status==10}}" class="item-btns">
+                                <view class="item-btn center" data-id="{{item.id}}" bindtap="cancelTap">取消订单</view>
+                                <view class="item-btn center" data-id="{{item.id}}" data-ordersn="{{item.order_sn}}" data-price="{{item.amount}}" bindtap="payPopupTap">立即支付</view>
+                            </view>
+                            <!-- 5：已取消 -->
+                            <view wx:elif="{{item.status==0}}" class="item-btns">
+                                <view class="item-btn center" data-id="{{item.id}}" bindtap="delTap">删除订单</view>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+            <!--如果无数据，则显示数据-->
+            <view  wx:else class="nodata">
+                <image src="/images/dingdan.png"/>
+                <text>暂无相关订单</text>
+            </view>
+        </view>
+        
+    <view class="modal" hidden="{{$payPopup$hidden}}">
+        <view class="cont" hidden="{{$payPopup$hidden}}">
+            <view class="title">{{$payPopup$title}}</view>
+            <view class="content">
+                <radio-group bindchange="$payPopup$checkboxChange">
+                    <radio checked="{{$payPopup$pay==1}}" value="1"/> 1. 线下支付，上传支付截图
+                    <view class="pic-cont">
+                        <block  wx:if="{{$payPopup$upload_pic.length<=0}}">
+                            <image src="/images/pic.png " class="pic-img " bindtap="$payPopup$chooseImage"/>
+                        </block>
+                        <block  wx:else>
+                            <image src="{{$payPopup$upload_pic[0]}}" class="pic-img" bindtap="$payPopup$previewImgTap"/>
+                            <image src="/images/close2.png" class="pic-del" bindtap="$payPopup$deletePic"/>
+                        </block>
+                    </view>
+                    <radio checked="{{$payPopup$pay==2}}" value="2"/> 2. 余额支付(剩余：{{$payPopup$money}})
+                </radio-group>
+            </view>
+            <view class="modal-btn-wrapper">
+                <view class="cancel-btn" style="color:rgba(7,17,27,0.6)" bindtap="$payPopup$cancel">取消</view>
+                <view class="confirm-btn" style="{{$payPopup$tintColor}}" bindtap="$payPopup$confirm">确认</view>
+            </view>
+        </view>
+    </view>
+
+        <!--加载更多时动画-->
+        
+    <view class="loadMoreGif"  wx:if="{{$bottomLoadMore$show}}">
+        <image src="../images/loadding.gif"/>
+        <text>{{$bottomLoadMore$message}}</text>
+    </view>
+
+    </view>

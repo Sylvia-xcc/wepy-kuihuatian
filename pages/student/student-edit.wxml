@@ -1,0 +1,105 @@
+
+    
+    <view class="con">
+        <form bindsubmit="$student$bindSave">
+            <view class="form-box">
+                <view class="row-wrap">
+                    <view class="label">学生姓名</view>
+                    <view class="label-right">
+                        <input class="input" name="studentName" type="text" placeholder="请输入学生真实姓名" value="{{$student$name}}"/>
+                    </view>
+                </view>
+                <view class="row-wrap">
+                    <view class="label">性别</view>
+                    <picker mode="selector" bindchange="$student$bindSexChange" range="{{$student$sexArr}}" value="{{$student$sexIndex}}" name="sex">
+                        <view class="picker">
+                            <text>{{$student$sexArr[$student$sexIndex]}}</text>
+                            <image src="/images/x_right.png" class="jt"/>
+                        </view>
+                    </picker>
+                </view>
+                <view class="row-wrap">
+                    <view class="label">出生日期</view>
+                    <picker mode="date" bindchange="$student$bindDateChange" value="{{$student$date}}" name="date">
+                        <view class="picker">
+                            <text>{{$student$date}}</text>
+                            <image src="/images/x_right.png" class="jt"/>
+                        </view>
+                    </picker>
+                </view>
+                <view class="row-wrap">
+                    <view class="label">身份证号</view>
+                    <view class="label-right">
+                        <input class="input" name="IDCard" type="idcard" maxlength="18" placeholder="请输入身份证号码" value="{{$student$IDCard}}"/>
+                    </view>
+                </view>
+                <view class="row-wrap">
+                    <view class="label">家长手机号码</view>
+                    <view class="label-right">
+                        <input class="input" name="mobile" type="number" maxlength="11" placeholder="请输入手机号码" value="{{$student$mobile}}"/>
+                    </view>
+                </view>
+                <!-- <view class='row-wrap'>
+                    <view class='label'>家长微信号</view>
+                    <view class='label-right'>
+                        <input class='input' name='parent_wx' type='number' maxlength='30' placeholder='请输入家长微信号' value="{{parents_wx}}"></input>
+                    </view>
+                </view> -->
+                <!-- <view class='row-wrap'>
+                    <view class='label'>辅导老师</view>
+                    <view class='label-right'>
+                        <input class='input' name='teacher_name' type='number' maxlength='30' placeholder='请输入辅导老师名字' value="{{teacher_name}}"></input>
+                    </view>
+                </view> -->
+                <view class="row-wrap">
+                    <view class="label">所在学校</view>
+                    <view class="label-right">
+                        <input class="input" name="schoolName" type="text" maxlength="50" placeholder="请输入学校名称" value="{{$student$school_name}}"/>
+                    </view>
+                </view>
+                <view class="row-wrap">
+                    <view class="label">所在年级</view>
+                    <picker mode="selector" bindchange="$student$bindGradeChange" range="{{$student$gradeArr}}" value="{{$student$gradeIndex}}" name="grade">
+                        <view class="picker">
+                            <text>{{$student$gradeArr[$student$gradeIndex]}}</text>
+                            <image src="/images/x_right.png" class="jt"/>
+                        </view>
+                    </picker>
+                </view>
+                <view class="row-wrap">
+                    <view class="label">所在地区</view>
+                    <picker mode="region" bindchange="$student$bindRegionChange" value="{{$student$region}}" name="region">
+                        <view class="picker">
+                            <text>{{$student$region}}</text>
+                            <image src="/images/x_right.png" class="jt"/>
+                        </view>
+                    </picker>
+                </view>
+                <view class="addr-details">
+                    <view class="label-right">
+                        <textarea name="address" auto-height placeholder="详细地址：如道路、门牌号、小区、楼栋号、单元室等" value="{{$student$address}}"/>
+                    </view>
+                </view>
+                <view class="photo">
+                    <view class="label">上传学生照片</view>
+                    <view class="pic-cont">
+                        <block  wx:if="{{$student$upload_pic.length<=0}}">
+                            <image src=" /images/jj.png " class="pic-img " bindtap="$student$chooseImage">
+                            </image>
+                        </block>
+                        <block  wx:else>
+                            <image src="{{$student$upload_pic[0]}}" class="pic-img" bindtap="$student$previewImgTap"/>
+                            <image src="/images/close2.png" class="pic-del" bindtap="$student$deletePic"/>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <!-- <view class='set-addr'>
+                                    <view class='label-switch'>设为默认地址</view>
+                                    <view class='label-switch-right'>
+                                        <switch name="iswitch" checked="{{isDefalut==1?true:false}}"></switch>
+                                    </view>
+                                </view> -->
+            <button type="warn" class="save-btn" formType="submit">保存</button>
+        </form>
+    </view>
